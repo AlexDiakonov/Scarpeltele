@@ -22,12 +22,18 @@ const BlogPost = () => {
     const post = await client.fetch(query);
     setPost(post);
   };
-  useEffect(() => {
-    fetchPost();
-    console.log(client.token, 'ji');
+  const getPosts = async (setter) => {
+    const query = '*[_type == "post"] | order(_createdAt desc)';
+    const post = await client.fetch(query);
 
-    getPosts(setAllPosts);
-  }, [blog]);
+    return setter(post);
+  };
+  useEffect(() => {
+    if (!post.title && allPosts.length < 1) {
+      fetchPost();
+      getPosts(setAllPosts);
+    }
+  }, [blog, fetchPost, getPosts]);
 
   return (
     <Layout>
@@ -51,7 +57,7 @@ const BlogPost = () => {
         </div>
         {post?.title && <Content post={post} />}
       </Container>
-      <SliderSection allPosts={allPosts} />
+      {allPosts?.length > 0 && <SliderSection allPosts={allPosts} />}
     </Layout>
   );
 };
