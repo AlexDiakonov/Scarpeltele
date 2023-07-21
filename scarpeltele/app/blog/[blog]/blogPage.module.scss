@@ -1,0 +1,117 @@
+@import '../../styles/variables';
+
+.blog {
+  &_blogHeader {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    margin-bottom: 2.4rem;
+  }
+}
+
+.content {
+  width: 79.2rem;
+  margin: 0 auto;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_reading {
+    color: $primary-blue;
+    margin-bottom: 2.4rem;
+  }
+
+  &_title {
+    margin-bottom: 2.4rem;
+  }
+
+  &_heroWrap {
+    width: 100%;
+    height: 44.4rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    margin-bottom: 2.4rem;
+
+    &_img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &_description {
+    color: $basic-82black;
+    margin-bottom: 2.4rem;
+  }
+
+  &_footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.4rem;
+    border-top: 1px solid $black10;
+
+    &_author {
+      display: flex;
+      align-items: center;
+
+      &_imgWrap {
+        width: 10rem;
+        height: 10rem;
+        margin-right: 0.6rem;
+
+        &_img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      &_wrapper {
+        display: flex;
+        flex-direction: column;
+        &_name {
+          margin-bottom: 0.4rem;
+        }
+      }
+    }
+
+    &_date {
+      color: $primary-blue;
+    }
+  }
+}
+.sliderSection {
+  background-color: $secondary-green-lighter;
+  &_wrapper {
+    &_title {
+      margin-bottom: 4.8rem;
+    }
+    :global {
+      .slick {
+        position: relative;
+        > button {
+          right: unset;
+          left: unset;
+          &:last-child {
+            right: 0;
+            top: -10.5rem;
+          }
+          &:first-child {
+            right: 5rem;
+            top: -10.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+.sliderItem {
+  display: block;
+  max-width: 38.4rem;
+}
+.wrapper {
+  height: 21.8rem;
+}

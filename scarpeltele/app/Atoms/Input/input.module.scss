@@ -1,0 +1,60 @@
+@import '../../styles/variables';
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+
+  &_label {
+    font-size: 1.4rem;
+    color: $basic-82black;
+    line-height: 2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &_wrapper {
+    position: relative;
+    display: flex;
+    height: 100%;
+
+    &_input {
+      background-color: $secondary-green-lighter;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      padding: 1.1rem 0.8rem;
+      max-height: 100%;
+      border: 1px solid $secondary-green-dark;
+      border-radius: 0.8rem;
+      width: 100%;
+      color: $basic-blue50;
+      transition: 100ms linear all;
+
+      &:hover {
+        border: 1px solid $secondary-darker-green;
+      }
+
+      &:focus {
+        background-color: $basic-white;
+        border: 1px solid $secondary-darker-green;
+        color: $basic-black;
+      }
+    }
+
+    & > svg {
+      position: absolute;
+      bottom: 0.6rem;
+      right: 0.6rem;
+
+      & > path {
+        transition: 100ms linear all;
+        stroke: $basic-blue50;
+      }
+    }
+
+    &_input:hover ~ svg > path {
+      stroke: $secondary-darker-green;
+    }
+
+    &_input:focus ~ svg > path {
+      stroke: $secondary-darker-green;
+    }
+  }
+}

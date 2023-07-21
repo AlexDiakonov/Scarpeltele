@@ -1,0 +1,96 @@
+@import '../../styles/variables';
+
+.faqWrapper {
+  background-color: $basic-white;
+  padding: 1.2rem;
+  border: 1px solid $black10;
+  transition: 100ms linear all;
+  border-radius: 8px;
+
+  &:hover {
+    border: 1px solid $secondary-blue;
+
+    .faqWrapper_fixPart {
+      color: $secondary-blue;
+    }
+
+    .faqWrapper_fixPart {
+      &_btn {
+        &:before,
+        &:after {
+          background-color: $secondary-blue;
+        }
+      }
+    }
+  }
+  &:hover > &_dropDown > &_dropDown_description {
+    color: $secondary-blue;
+  }
+  &_fixPart {
+    transition: 100ms linear all;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_btn {
+      width: 2.8rem;
+      background-color: transparent;
+      height: 2.8rem;
+      cursor: pointer;
+      border: none;
+      position: relative;
+
+      &:after {
+        display: block;
+        position: absolute;
+        left: 0%;
+        content: '';
+        width: 2.8rem;
+        height: 2px;
+        background-color: $primary-blue;
+        transform: rotate(90deg);
+        transition: transform 200ms linear;
+      }
+
+      &:before {
+        display: block;
+        position: absolute;
+        left: 0%;
+        content: '';
+        width: 2.8rem;
+        height: 2px;
+        background-color: $primary-blue;
+        transition: transform 200ms linear;
+      }
+    }
+
+    &_btnClose {
+      &:after {
+        transition: all 200ms linear;
+        transform: rotate(-45deg);
+      }
+
+      &:before {
+        transition: all 200ms linear;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &_dropDown {
+    max-height: 0px;
+    margin-top: 0rem;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+
+    &_description {
+      color: $basic-82black;
+      transition: 100ms linear all;
+    }
+  }
+  &_open {
+    margin-top: 2.4rem;
+    max-height: 300px;
+    transition: all 0.2s ease-in-out;
+  }
+}

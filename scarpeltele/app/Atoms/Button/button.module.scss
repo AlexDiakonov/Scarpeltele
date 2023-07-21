@@ -1,0 +1,43 @@
+@import '../../styles/_variables.scss';
+
+.customButton {
+  transition: 150ms ease-in-out all;
+  padding: 1.45rem 1.6rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  background-color: $primary-blue;
+  color: $basic-white;
+  font-weight: 500;
+  line-height: 1.9rem;
+  border: none;
+  border-radius: 1.2rem;
+  letter-spacing: 0.7px;
+}
+
+.customButton:hover {
+  background-color: $secondary-blue;
+}
+
+.lightGreen {
+  background-color: $secondary-green-light;
+  color: $basic-82black;
+}
+
+.borderTransparent,
+.borderLighterGreen {
+  color: $primary-blue;
+  background: transparent;
+  border: 1px solid $primary-blue;
+}
+
+.borderTransparent:hover {
+  background-color: $secondary-green-lighter;
+}
+.borderLighterGreen {
+  background-color: $secondary-green-lighter;
+}
+@media screen and (max-width: 768px) {
+  .customButton {
+    font-size: 16px;
+  }
+}

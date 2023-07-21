@@ -1,0 +1,147 @@
+@import '../../styles/variables';
+
+.events {
+  background-color: $secondary-green-lighter;
+  padding-bottom: 8.7rem;
+  &_wrapper {
+    &_titleWrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.4rem;
+    }
+
+    &_description {
+      display: block;
+      max-width: 60.8rem;
+      margin-bottom: 4.8rem;
+    }
+  }
+}
+.slide {
+  display: block;
+  margin: 0 auto;
+  max-width: 38.4rem;
+  background-color: $basic-white;
+  border: 1px solid $black10;
+  border-radius: 8px;
+  overflow: hidden;
+  &_imgWrap {
+    width: 100%;
+    max-height: 22rem;
+
+    &_img {
+      max-width: 100%;
+      max-height: 22rem;
+      object-fit: cover;
+    }
+  }
+
+  &_content {
+    padding: 1.2rem;
+
+    &_date {
+      display: block;
+      color: $primary-blue;
+      margin-bottom: 0.8rem;
+    }
+
+    &_title {
+      margin-bottom: 1.2rem;
+    }
+
+    &_locationWrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &_location {
+        display: flex;
+        align-items: center;
+
+        &_icon {
+          margin-right: 0.8rem;
+          & > path {
+            stroke: $basic-82black;
+          }
+          & > circle {
+            stroke: $basic-82black;
+          }
+        }
+      }
+
+      &_logoWrapper {
+        max-width: 10.2rem;
+
+        &_logo {
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .events {
+    &_wrapper {
+      &_title {
+        margin-bottom: 1.6rem;
+      }
+
+      &_description {
+        max-width: unset;
+      }
+    }
+  }
+  .slide {
+    max-width: 34.4rem;
+
+    &_content {
+      &_locationWrapper {
+        &_logoWrapper {
+          max-width: 10.2rem;
+
+          &_logo {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .slide {
+    max-width: 30rem;
+
+    &_content {
+      &_locationWrapper {
+        &_logoWrapper {
+          max-width: 10.2rem;
+
+          &_logo {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .slide {
+    max-width: 57rem;
+
+    &_content {
+      &_locationWrapper {
+        &_logoWrapper {
+          max-width: 10.2rem;
+
+          &_logo {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}

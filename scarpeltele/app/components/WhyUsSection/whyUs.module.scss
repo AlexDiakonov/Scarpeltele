@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+
+.whyUs {
+  background-color: $secondary-blue-light;
+
+  &_wrapper {
+    &_title {
+      margin-bottom: 4.8rem;
+    }
+
+    &_list {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      &_item {
+        margin-right: 2.6rem;
+        max-width: 21.4rem;
+        &_title {
+          margin-top: 1.2rem;
+          margin-bottom: 1.2rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .whyUs {
+    &_wrapper {
+      &_list {
+        &_item {
+          margin-right: 1.2rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 415px) {
+  .whyUs {
+    &_wrapper {
+      &_list {
+        &_item {
+          display: flex;
+          width: 100%;
+          max-width: unset;
+          margin-bottom: 4rem;
+          & > svg {
+            min-width: 7.4rem;
+            margin-right: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}

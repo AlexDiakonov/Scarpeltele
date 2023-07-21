@@ -1,0 +1,103 @@
+.about {
+  background-image: url('../../assets/about/map.png');
+  background-repeat: no-repeat;
+  box-sizing: 50%;
+  background-size: 66.3rem 43rem;
+  background-position: 100% 10rem;
+  &_imgWrapper {
+    display: none;
+  }
+  &_content {
+    max-width: 47.8rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4.8rem;
+
+    &_title,
+    &_description {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &_workers {
+    display: flex;
+    justify-content: space-around;
+    max-width: 47.8rem;
+
+    &_item {
+      display: flex;
+      flex-direction: column;
+      max-width: 10rem;
+      align-items: center;
+
+      &_imageWrapper {
+        width: 10rem;
+        height: 10rem;
+
+        &_img {
+          max-width: 100%;
+          max-height: 10rem;
+          object-fit: contain;
+        }
+      }
+
+      &_title {
+        margin-bottom: 0.5rem;
+      }
+
+      &_position {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    background-image: unset;
+    padding-bottom: 0rem;
+    &_imgWrapper {
+      display: block;
+      max-height: 43rem;
+      &_img {
+        object-fit: contain;
+        transform: translate(0, -25%);
+      }
+    }
+    &_content {
+      max-width: 100%;
+    }
+
+    &_workers {
+      max-width: 100%;
+      justify-content: space-between;
+      gap: 1.5rem;
+      &_item {
+        flex: 2 1 auto;
+        &_imageWrapper {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .about {
+    &_imgWrapper {
+      max-height: 21.7rem;
+      &_img {
+        transform: translate(0, -35%);
+      }
+    }
+    &_content {
+    }
+
+    &_workers {
+      &_item {
+        &_imageWrapper {
+        }
+      }
+    }
+  }
+}

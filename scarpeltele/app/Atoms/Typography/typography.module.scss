@@ -1,0 +1,166 @@
+.accentTitle {
+  font-weight: 300;
+  font-size: 5.6rem;
+  line-height: 6.4rem;
+}
+.h1Title {
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 6rem;
+}
+
+.h2Title {
+  font-size: 4.4rem;
+  line-height: 5.2rem;
+  font-weight: 700;
+}
+
+.h3Title {
+  font-size: 3.6rem;
+  line-height: 4rem;
+  font-weight: 700;
+}
+.h3Light {
+  font-size: 3.6rem;
+  line-height: 4rem;
+  font-weight: 300;
+}
+
+.h4title {
+  font-size: 2.4rem;
+  line-height: 4rem;
+  font-weight: 600;
+}
+
+.h5title {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+}
+
+.h6title {
+  font-size: 1.8rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.body1 {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+}
+
+.body2 {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: 400;
+}
+
+.body2m {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: 500;
+}
+
+.body3 {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  font-weight: 500;
+}
+
+.body4 {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+.body5 {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  font-weight: 400;
+}
+
+//MEDIA RULES MOBILE ///////////////////////
+
+@media screen and (max-width: 415px) {
+  .accentTitle {
+    font-weight: 300;
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+  .h1Title {
+    font-weight: 700;
+    font-size: 3.6rem;
+    line-height: 4.4rem;
+  }
+
+  .h2Title {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+  }
+
+  .h3Title {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    font-weight: 700;
+  }
+  .h3Light {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+
+  .h4title {
+    font-size: 2rem;
+    line-height: 2.6rem;
+    font-weight: 600;
+  }
+
+  .h5title {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    font-weight: 600;
+  }
+
+  .h6title {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 600;
+  }
+
+  .body1 {
+    font-size: 1.5em;
+    line-height: 2rem;
+    font-weight: 400;
+  }
+
+  .body2 {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 400;
+  }
+
+  .body2m {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 500;
+  }
+
+  .body3 {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    font-weight: 500;
+  }
+
+  .body4 {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 400;
+  }
+
+  .body5 {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-weight: 400;
+  }
+}

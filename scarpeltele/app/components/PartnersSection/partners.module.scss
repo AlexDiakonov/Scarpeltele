@@ -1,0 +1,59 @@
+.partnerSection {
+  &_title {
+    margin-bottom: 4.8rem;
+  }
+
+  &_logoWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    &_logo {
+      display: flex;
+      align-items: center;
+      height: 8rem;
+      margin-bottom: 2.6rem;
+
+      &_img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .partnerSection {
+    &_logoWrapper {
+      gap: 3.5rem;
+      justify-content: space-between;
+
+      &_logo {
+        min-width: 5.5rem;
+        &:not(:last-child) {
+          margin-right: unset;
+        }
+        &_img {
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .partnerSection {
+    &_logoWrapper {
+      gap: 1.5rem;
+      justify-content: space-between;
+
+      &_logo {
+        &:not(:last-child) {
+          margin-right: unset;
+        }
+        &_img {
+        }
+      }
+    }
+  }
+}

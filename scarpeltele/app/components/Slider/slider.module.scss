@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+.arrow_left,
+.arrow_right {
+  background-color: $basic-white;
+  position: absolute;
+  cursor: pointer;
+  bottom: -8.8rem;
+  border: none;
+  height: 4.8rem;
+  width: 5.4rem;
+}
+
+.arrow_left {
+  border-radius: 12px 0 0 12px;
+}
+.arrow_right {
+  border-radius: 0 12px 12px 0;
+  left: 4.6rem;
+}
+
+.slick-slider {
+  position: relative;
+}

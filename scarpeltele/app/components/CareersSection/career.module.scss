@@ -1,0 +1,67 @@
+@import '../../styles/variables';
+.careerSection {
+  background-color: $secondary-blue;
+  position: relative;
+  overflow: hidden;
+
+  &_lense {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &_s {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &_wrapper {
+    color: $basic-white;
+    display: flex;
+    max-width: 38.4rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    &_title {
+      margin-bottom: 1.2rem;
+    }
+
+    &_description {
+      margin-bottom: 2.4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .careerSection {
+    &_lense {
+      transform: translate(0, -10%);
+    }
+
+    &_s {
+      transform: translate(10%, 33%);
+      max-width: 24rem;
+    }
+
+    &_wrapper {
+      max-width: 100%;
+      &_description {
+        max-width: 46.4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 607px) {
+  .careerSection {
+    &_lense {
+      display: none;
+    }
+
+    &_s {
+      display: none;
+    }
+  }
+}

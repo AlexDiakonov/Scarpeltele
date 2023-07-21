@@ -1,0 +1,118 @@
+@import '../../styles/variables';
+
+.contactUs {
+  background-color: $secondary-blue-light;
+  position: relative;
+
+  &_mobileImage {
+    display: none;
+  }
+  &_image {
+    position: absolute;
+    bottom: 0;
+    right: 52%;
+  }
+
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    &_image {
+      display: none;
+    }
+    &_content {
+      &_title {
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    &_form {
+      width: 58.8rem;
+      max-width: 100%;
+      padding: 4.8rem 2.4rem;
+      background-color: $basic-white;
+      border: 1px solid $black10;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: relative;
+
+      &_inputs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &_input {
+          width: 48%;
+          margin-bottom: 2.4rem;
+        }
+      }
+
+      &_textArea {
+        width: 100%;
+        margin-bottom: 2.4rem;
+        & > div > textarea {
+          max-height: 4.8rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contactUs {
+    position: relative;
+
+    &_image {
+      display: none;
+    }
+    &_wrapper {
+      flex-direction: column;
+      &_content {
+        margin-bottom: 10.1rem;
+      }
+      &_image {
+        display: unset;
+        position: absolute;
+        top: 0;
+        right: 10%;
+        max-width: 31.4rem;
+        height: 33.5rem;
+      }
+      &_form {
+        position: relative;
+        width: unset;
+        z-index: 10;
+      }
+    }
+  }
+}
+@media screen and (max-width: 584px) {
+  .contactUs {
+    &_mobileImage {
+      right: 2%;
+      position: absolute;
+      display: unset;
+    }
+
+    &_image {
+      display: none;
+    }
+
+    &_wrapper {
+      &_content {
+        margin-bottom: 4.8rem;
+      }
+      &_image {
+        display: none;
+      }
+      &_form {
+        &_inputs {
+          &_input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

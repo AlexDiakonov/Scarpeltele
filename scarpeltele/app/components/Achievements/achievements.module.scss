@@ -1,0 +1,74 @@
+@import '../../styles/variables';
+.achievements {
+  background-color: $primary-blue;
+
+  &_wrapper {
+    display: flex;
+    color: $basic-white;
+    justify-content: space-between;
+
+    &_leftSide {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+
+      &_organizer {
+        &_title {
+          color: $primary-green;
+          margin-bottom: 0.5rem;
+        }
+        &_positioner {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    &_rightSide {
+      max-width: 38.4rem;
+      flex: 2 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .achievements {
+    &_wrapper {
+      flex-direction: column;
+
+      &_leftSide {
+        width: unset;
+        margin-bottom: 6.4rem;
+
+        &_organizer {
+          &_positioner {
+            flex-direction: row;
+            &_description {
+              margin-right: 3px;
+            }
+          }
+        }
+      }
+
+      &_rightSide {
+        max-width: unset;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .achievements {
+    &_wrapper {
+      &_leftSide {
+        flex-direction: column;
+
+        &_organizer {
+          &:not(:last-child) {
+            margin-bottom: 3.2rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+@import '../../styles/variables';
+
+.heroSection {
+  background-color: $primary-green;
+  position: relative;
+  padding-top: 9.6rem;
+  overflow: hidden;
+
+  &_wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_title {
+      max-width: 62.7rem;
+      text-align: center;
+      margin-bottom: 2.4rem;
+      position: relative;
+
+      &_icon {
+        position: absolute;
+        top: 0;
+        transform: rotateY(180deg) translate(-40%, -100%);
+      }
+    }
+
+    &_btn {
+      margin-bottom: 7.2rem;
+    }
+
+    &_benefitList {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      &_item {
+        background-color: $basic-86white;
+        max-width: 38.4rem;
+        padding: 2.4rem;
+        backdrop-filter: blur(10px);
+        border-radius: 0.8rem;
+
+        &_icon {
+          margin-bottom: 1.2rem;
+        }
+
+        &_title {
+          margin-bottom: 1.2rem;
+        }
+      }
+    }
+  }
+
+  &_leftImage {
+    position: absolute;
+    left: 0%;
+    z-index: 1;
+    transform: translate(-57%, 22%);
+  }
+
+  &_rightImage {
+    position: absolute;
+    z-index: 1;
+    right: 0%;
+    transform: translate(54%, 19%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroSection {
+    &_wrapper {
+      &_benefitList {
+        flex-direction: column;
+
+        &_item {
+          width: 100%;
+          max-width: unset;
+          display: flex;
+
+          &:not(:last-child) {
+            margin-bottom: 1.6rem;
+          }
+
+          &_icon {
+            margin-right: 4.8rem;
+            min-width: 10rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 415px) {
+  .heroSection {
+    &_wrapper {
+      &_title {
+        &_icon {
+          right: 15%;
+        }
+      }
+      &_benefitList {
+        flex-direction: column;
+
+        &_item {
+          padding: 1.6rem;
+          & > div {
+            & > p {
+              font-size: 1.5rem;
+            }
+          }
+
+          &_icon {
+            min-width: 5.8rem;
+            max-width: 5.8rem;
+            transform: translate(0, -25%);
+          }
+        }
+      }
+    }
+  }
+}

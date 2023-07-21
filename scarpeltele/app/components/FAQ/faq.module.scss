@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+
+.faq {
+  background-color: $secondary-green-lighter;
+  &_wrapper {
+    &_titleWrap {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4.8rem;
+    }
+
+    &_faqBlock {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.4rem;
+      justify-content: space-between;
+
+      &_faqItem {
+        // margin-right: 2.4rem;
+        width: 58.8rem;
+        max-width: 49%;
+        align-self: flex-start;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1333px) {
+  .faq {
+    &_wrapper {
+      &_faqBlock {
+        flex-direction: column;
+        gap: unset;
+
+        &_faqItem {
+          width: 100%;
+          max-width: unset;
+          &:not(:last-child) {
+            margin-bottom: 2.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .faq {
+    &_wrapper {
+      &_faqBlock {
+        &_faqItem {
+          &:not(:last-child) {
+            margin-bottom: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}

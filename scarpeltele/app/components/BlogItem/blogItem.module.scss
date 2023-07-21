@@ -1,0 +1,47 @@
+@import '../../styles/variables';
+
+.post {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid $black10;
+  &_imgWrapper {
+    width: 100%;
+    &_img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &_content {
+    padding: 1.2rem;
+    &_dateWrapper {
+      color: $primary-blue;
+      margin-bottom: 1rem;
+
+      &_date {
+        &:after {
+          content: '';
+          display: inline-block;
+          border-radius: 50%;
+          width: 4px;
+          height: 4px;
+          background-color: $primary-blue;
+          transform: translate(0, -55%);
+          margin-left: 0.4rem;
+          margin-right: 0.4rem;
+        }
+      }
+    }
+    &_title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    &_description {
+      color: $basic-82black;
+    }
+  }
+}

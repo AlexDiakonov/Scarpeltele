@@ -1,0 +1,141 @@
+@import '../styles/variables';
+.blogHero {
+  padding-top: 9.6rem;
+  background-color: $secondary-blue-light;
+
+  &_wrapper {
+    position: relative;
+
+    &_bg {
+      position: absolute;
+      right: -2rem;
+      transform: translate(0, -10rem);
+    }
+
+    &_title {
+      margin-bottom: 7.2rem;
+    }
+  }
+}
+.post {
+  display: flex;
+  justify-content: center;
+  background: $basic-white;
+  border-radius: 0.8rem;
+  overflow: hidden;
+
+  &_imgWrapper {
+    height: 44.5rem;
+    flex-basis: 66.66%;
+
+    &_img {
+      height: 44.5rem;
+      width: 100%;
+      object-fit: fill;
+    }
+  }
+  &_content {
+    flex-basis: 33.33%;
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+
+    &_dateWrapper {
+      color: $primary-blue;
+      margin-bottom: 1.8rem;
+
+      &_date {
+        &:after {
+          content: '';
+          display: inline-block;
+          border-radius: 50%;
+          width: 4px;
+          height: 4px;
+          background-color: $primary-blue;
+          transform: translate(0, -55%);
+          margin-left: 0.4rem;
+          margin-right: 0.4rem;
+        }
+      }
+    }
+
+    &_title {
+      margin-bottom: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &_description {
+      color: $basic-82black;
+    }
+  }
+}
+
+.postSection {
+  display: flex;
+  flex-direction: column;
+  &_postWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2.4rem;
+    margin-bottom: 4.8rem;
+
+    &_item {
+      width: calc(100% / 3);
+
+      &.twoItems {
+        width: calc((100% - (2.4rem)) / 2);
+      }
+
+      &.threeItems {
+        width: calc((100% - (2.4rem * 2)) / 3);
+        & > .imgWrapper {
+          height: 21.8rem;
+          & > img {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .paginator {
+    display: inline-flex;
+    margin: 0 auto;
+    flex-basis: auto;
+    border: 1px solid $black10;
+    border-radius: 8px;
+
+    &_item {
+      width: 4rem;
+      border-right: 1px solid $black10;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: $basic-82black;
+    }
+    & > li {
+      cursor: pointer;
+      &:nth-child(2) {
+        border-left: 1px solid $black10;
+      }
+      &:first-child,
+      &:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+      }
+    }
+
+    &_selected {
+      background-color: $primary-blue;
+      color: $basic-white;
+    }
+  }
+}
