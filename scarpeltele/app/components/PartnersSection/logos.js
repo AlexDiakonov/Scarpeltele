@@ -1,13 +1,10 @@
-import Airtel from '../../assets/partners/Airtel.png';
 import Alibaba from '../../assets/partners/Alibaba.png';
 import Bics from '../../assets/partners/Bics.png';
 import FingenSoft from '../../assets/partners/FingenSoft.png';
 import GMS from '../../assets/partners/GMS.png';
 import HotMobile from '../../assets/partners/HotMobile.png';
 import Horisen from '../../assets/partners/Horisen.png';
-import Infobip from '../../assets/partners/Infobip.png';
 import Dott from '../../assets/partners/Dott.png';
-import LinkMobility from '../../assets/partners/linkMobility.png';
 import Mitto from '../../assets/partners/Mitto.png';
 import TechMessaging from '../../assets/partners/TechMessaging.png';
 import Nexmo from '../../assets/partners/Nexmo.png';
@@ -22,7 +19,6 @@ import TelQ from '../../assets/partners/TelQ.png';
 import Testelium from '../../assets/partners/Testelium.png';
 import TMT from '../../assets/partners/TMT.png';
 import Twilio from '../../assets/partners/Twilio.png';
-import Tyntec from '../../assets/partners/Tyntec.png';
 import Vovitel from '../../assets/partners/Vovitel.png';
 import Viber from '../../assets/partners/Viber.png';
 
@@ -30,16 +26,13 @@ const partnerLogos = [
   Vovitel,
   Dott,
   HotMobile,
-  Infobip,
   Testelium,
   GMS,
   TMT,
   Twilio,
   Mitto,
-  Tyntec,
   Orange,
   Bics,
-  Airtel,
   Viber,
   Tata,
   TelQ,
@@ -52,7 +45,6 @@ const partnerLogos = [
   Nexmo,
   SilverStreet,
   FingenSoft,
-  LinkMobility,
   Horisen,
 ];
 export default partnerLogos;
