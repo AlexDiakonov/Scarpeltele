@@ -17,6 +17,7 @@ const FAQItem = ({ title, description, className }) => {
 
   return (
     <div
+      id="FAQ"
       onClick={dropDownHandler}
       ref={ref}
       className={classNames(styles.faqWrapper, className)}

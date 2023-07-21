@@ -6,6 +6,7 @@
   &_logoWrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 3rem;
 
     &_logo {
@@ -22,7 +23,29 @@
     }
   }
 }
+@media screen and (max-width: 1200px) {
+  .partnerSection {
+    &_logoWrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 3rem;
 
+      &_logo {
+        display: flex;
+        align-items: center;
+        height: 8rem;
+        margin-bottom: 2.6rem;
+        max-width: 5rem;
+        &_img {
+          height: 100%;
+          object-fit: contain;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .partnerSection {
     &_logoWrapper {

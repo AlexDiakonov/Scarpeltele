@@ -7,7 +7,7 @@ import ArrowTopRight from '../../assets/icons/ArrowTopRight';
 import styles from './blog.module.scss';
 import classNames from 'classnames';
 import { urlFor } from '../../lib/client';
-import Link from 'next/link';
+
 import { format } from 'date-fns';
 
 const Blog = ({ posts }) => {
@@ -29,7 +29,7 @@ const Blog = ({ posts }) => {
       <div className={styles.blog_grid}>
         {posts.map((item, idx) => {
           return (
-            <Link
+            <a
               href={`/blog/${item.slug.current}`}
               className={styles[`blog_grid_item${idx}`]}
               key={idx}
@@ -75,7 +75,7 @@ const Blog = ({ posts }) => {
                   }}
                 ></Typography>
               </div>
-            </Link>
+            </a>
           );
         })}
       </div>

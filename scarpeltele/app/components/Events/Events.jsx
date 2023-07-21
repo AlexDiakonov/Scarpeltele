@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Location from '../../assets/icons/Location';
 import Slider from '../Slider/Slider';
 import { urlFor } from '../../lib/client';
-import Link from 'next/link';
 
 const Events = ({ events }) => {
   return (
@@ -31,7 +30,7 @@ const Events = ({ events }) => {
         <Slider>
           {events.map((item) => {
             return (
-              <Link
+              <a
                 target="_blank"
                 href={item.slug.current}
                 className={styles.slide}
@@ -86,7 +85,7 @@ const Events = ({ events }) => {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </a>
             );
           })}
         </Slider>

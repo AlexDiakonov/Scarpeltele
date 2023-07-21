@@ -4,7 +4,6 @@ import Container from '../../Atoms/Container/Container';
 import styles from './NavBar.module.scss';
 import MainLogo from '../../assets/icons/MainLogo';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
 import Button from '../../Atoms/Button/Button';
 import Typography from '../../Atoms/Typography/Typography';
 import { useRef, useState } from 'react';
@@ -25,9 +24,9 @@ const NavBar = () => {
     <header className={styles.headerStyler}>
       <Container className={styles.headerStyler_navWrap}>
         <nav className={styles.navWrapper}>
-          <Link className={styles.navWrapper_logo} href="/">
+          <a className={styles.navWrapper_logo} href="/">
             <MainLogo />
-          </Link>
+          </a>
           <div
             onClick={menuToggle}
             ref={ref}
@@ -42,7 +41,7 @@ const NavBar = () => {
                     styles.navWrapper_menuContainer_organizer_menu_item
                   }
                 >
-                  <Link
+                  <a
                     className={classNames(
                       {
                         [styles.active]: pathName === '/',
@@ -61,14 +60,14 @@ const NavBar = () => {
                     >
                       Home
                     </Typography>
-                  </Link>
+                  </a>
                 </li>
                 <li
                   className={
                     styles.navWrapper_menuContainer_organizer_menu_item
                   }
                 >
-                  <Link
+                  <a
                     className={classNames(
                       {
                         [styles.active]: pathName === '/solutions',
@@ -87,14 +86,14 @@ const NavBar = () => {
                     >
                       Solutions
                     </Typography>
-                  </Link>
+                  </a>
                 </li>
                 <li
                   className={
                     styles.navWrapper_menuContainer_organizer_menu_item
                   }
                 >
-                  <Link
+                  <a
                     className={classNames(
                       {
                         [styles.active]: pathName === '#/whyUs',
@@ -113,14 +112,14 @@ const NavBar = () => {
                     >
                       Why us
                     </Typography>
-                  </Link>
+                  </a>
                 </li>
                 <li
                   className={
                     styles.navWrapper_menuContainer_organizer_menu_item
                   }
                 >
-                  <Link
+                  <a
                     className={classNames(
                       {
                         [styles.active]: pathName === '/about',
@@ -139,14 +138,14 @@ const NavBar = () => {
                     >
                       About
                     </Typography>
-                  </Link>
+                  </a>
                 </li>
                 <li
                   className={
                     styles.navWrapper_menuContainer_organizer_menu_item
                   }
                 >
-                  <Link
+                  <a
                     className={classNames(
                       {
                         [styles.active]: pathName === '/events',
@@ -165,14 +164,14 @@ const NavBar = () => {
                     >
                       Events
                     </Typography>
-                  </Link>
+                  </a>
                 </li>
                 <li
                   className={
                     styles.navWrapper_menuContainer_organizer_menu_item
                   }
                 >
-                  <Link
+                  <a
                     className={classNames(
                       {
                         [styles.active]: pathName === '/blog',
@@ -191,14 +190,14 @@ const NavBar = () => {
                     >
                       Blog
                     </Typography>
-                  </Link>
+                  </a>
                 </li>
                 <li
                   className={
                     styles.navWrapper_menuContainer_organizer_menu_item
                   }
                 >
-                  <Link
+                  <a
                     className={classNames(
                       {
                         [styles.active]: pathName === '/contact',
@@ -217,7 +216,7 @@ const NavBar = () => {
                     >
                       Contact
                     </Typography>
-                  </Link>
+                  </a>
                 </li>
               </ul>
               <Button

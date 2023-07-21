@@ -6,7 +6,6 @@ import { urlFor, client } from '../lib/client';
 import styles from './blog.module.scss';
 import Img from 'next/image';
 import { format } from 'date-fns';
-import Link from 'next/link';
 import ArrowTopRight from '../assets/icons/ArrowTopRight';
 
 const HeroSection = ({ post }) => {
@@ -24,7 +23,7 @@ const HeroSection = ({ post }) => {
         >
           Scarpel Blog. News and insights
         </Typography>
-        <Link href={`/blog/${post?.slug.current}`} className={styles.post}>
+        <a href={`/blog/${post?.slug.current}`} className={styles.post}>
           <div className={styles.post_imgWrapper}>
             <Img
               className={styles.post_imgWrapper_img}
@@ -57,7 +56,7 @@ const HeroSection = ({ post }) => {
               {post.description.slice(0, 165)}...
             </Typography>
           </div>
-        </Link>
+        </a>
       </Container>
     </div>
   );

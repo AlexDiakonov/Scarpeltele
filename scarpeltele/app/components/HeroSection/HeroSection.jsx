@@ -23,7 +23,11 @@ const HeroSection = () => {
           Score Scalable SMS. Worldwide.
           <MessageIcon className={styles.heroSection_wrapper_title_icon} />
         </Typography>
-        <Button className={styles.heroSection_wrapper_btn}>
+        <Button
+          link={true}
+          href="#contact"
+          className={styles.heroSection_wrapper_btn}
+        >
           Contact An Expert
         </Button>
         <ul className={styles.heroSection_wrapper_benefitList}>

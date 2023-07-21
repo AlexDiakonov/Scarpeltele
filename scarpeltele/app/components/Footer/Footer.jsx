@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import Container from '../../Atoms/Container/Container';
 import MainLogo from '../../assets/icons/MainLogo';
 import styles from './footer.module.scss';
@@ -15,9 +14,9 @@ const Footer = () => {
     <footer id="footer" className={styles.bgWrapper}>
       <Container className={styles.footerContainer}>
         <div className={styles.footerContainer_leftSide}>
-          <Link className={styles.footerContainer_leftSide_logo} href={'/'}>
+          <a className={styles.footerContainer_leftSide_logo} href={'/'}>
             <MainLogo />
-          </Link>
+          </a>
           <nav
             className={classNames(
               styles.footerContainer_nav,
@@ -26,33 +25,33 @@ const Footer = () => {
           >
             <ul className={styles.footerContainer_nav_rightSide}>
               <li className={styles.footerContainer_nav_rightSide_item}>
-                <Link href={'/blog'}>
+                <a href={'/blog'}>
                   <Typography variant="body3">Blog</Typography>
-                </Link>
+                </a>
               </li>
               <li className={styles.footerContainer_nav_rightSide_item}>
-                <Link href={'#'}>
+                <a href={'#'}>
                   <Typography variant="body3">Careers</Typography>
-                </Link>
+                </a>
               </li>
               <li className={styles.footerContainer_nav_rightSide_item}>
-                <Link href={'#'}>
+                <a href={'#FAQ'}>
                   <Typography variant="body3">FAQ</Typography>
-                </Link>
+                </a>
               </li>
               <li className={styles.footerContainer_nav_rightSide_item}>
-                <Link href={'#'}>
+                <alert href={'#'}>
                   <Typography variant="body3">Privacy Policy</Typography>
-                </Link>
+                </alert>
               </li>
               <li className={styles.footerContainer_nav_rightSide_item}>
-                <Link href={'#'}>
+                <a href={'#'}>
                   <Typography variant="body3">Terms of use</Typography>
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>
-          <Link
+          <a
             className={classNames(
               styles.footerContainer_leftSide_location,
               styles.mNoDisplay,
@@ -70,11 +69,11 @@ const Footer = () => {
               <LocationIcon />
               Georgiou Katsounotou 6, b3036 Limassol, Cyprus
             </Typography>
-          </Link>
+          </a>
           <div className={styles.mobileOrganizer}>
             <ul className={styles.footerContainer_leftSide_links}>
               <li className={styles.footerContainer_leftSide_links_item}>
-                <Link
+                <a
                   className={styles.footerContainer_leftSide_links_item_link}
                   href="mailto:contact@scarpeltele.com"
                   target="_blank"
@@ -83,10 +82,10 @@ const Footer = () => {
                     <MailIcon />
                     contact@scarpeltele.com
                   </Typography>
-                </Link>
+                </a>
               </li>
               <li className={styles.footerContainer_leftSide_links_item}>
-                <Link
+                <a
                   className={styles.footerContainer_leftSide_links_item_link}
                   target="_blank"
                   href="tel:+357 25 056 456"
@@ -94,10 +93,10 @@ const Footer = () => {
                   <Typography className={styles.footerLinkText} variant="body4">
                     <Phone /> +357 25 056 456
                   </Typography>
-                </Link>
+                </a>
               </li>
               <li className={styles.footerContainer_leftSide_links_item}>
-                <Link
+                <a
                   className={styles.footerContainer_leftSide_links_item_link}
                   href="https://www.linkedin.com/company/scarpel-telecom/"
                   target="_blank"
@@ -106,10 +105,10 @@ const Footer = () => {
                     <LinkedIn />
                     scarpel-telecom
                   </Typography>
-                </Link>
+                </a>
               </li>
             </ul>
-            <Link
+            <a
               className={classNames(
                 styles.footerContainer_leftSide_location,
                 styles.noDisplayPc,
@@ -127,7 +126,7 @@ const Footer = () => {
                 <LocationIcon />
                 Georgiou Katsounotou 6, b3036 Limassol, Cyprus
               </Typography>
-            </Link>
+            </a>
             <Typography
               className={classNames(
                 styles.noDisplayPc,
@@ -145,29 +144,29 @@ const Footer = () => {
         >
           <ul className={styles.footerContainer_nav_rightSide}>
             <li className={styles.footerContainer_nav_rightSide_item}>
-              <Link href={'/blog'}>
+              <a href={'/blog'}>
                 <Typography variant="body3">Blog</Typography>
-              </Link>
+              </a>
             </li>
             <li className={styles.footerContainer_nav_rightSide_item}>
-              <Link href={'#'}>
+              <a href={'#'}>
                 <Typography variant="body3">Careers</Typography>
-              </Link>
+              </a>
             </li>
             <li className={styles.footerContainer_nav_rightSide_item}>
-              <Link href={'#'}>
+              <a href={'#'}>
                 <Typography variant="body3">FAQ</Typography>
-              </Link>
+              </a>
             </li>
             <li className={styles.footerContainer_nav_rightSide_item}>
-              <Link href={'#'}>
+              <a href={'#'}>
                 <Typography variant="body3">Privacy Policy</Typography>
-              </Link>
+              </a>
             </li>
             <li className={styles.footerContainer_nav_rightSide_item}>
-              <Link href={'#'}>
+              <a href={'#'}>
                 <Typography variant="body3">Terms of use</Typography>
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>
