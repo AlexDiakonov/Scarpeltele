@@ -9,6 +9,7 @@ import classNames from 'classnames';
 import { urlFor } from '../../lib/client';
 
 import { format } from 'date-fns';
+import Link from 'next/link';
 
 const Blog = ({ posts }) => {
   return (
@@ -29,7 +30,7 @@ const Blog = ({ posts }) => {
       <div className={styles.blog_grid}>
         {posts.map((item, idx) => {
           return (
-            <a
+            <Link
               href={`/blog/${item.slug.current}`}
               className={styles[`blog_grid_item${idx}`]}
               key={idx}
@@ -75,7 +76,7 @@ const Blog = ({ posts }) => {
                   }}
                 ></Typography>
               </div>
-            </a>
+            </Link>
           );
         })}
       </div>
