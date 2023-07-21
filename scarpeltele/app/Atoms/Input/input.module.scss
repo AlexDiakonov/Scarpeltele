@@ -26,6 +26,7 @@
       width: 100%;
       color: $basic-blue50;
       transition: 100ms linear all;
+      resize: none;
 
       &:hover {
         border: 1px solid $secondary-darker-green;
