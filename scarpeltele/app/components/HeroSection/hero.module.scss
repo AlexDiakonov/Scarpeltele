@@ -31,6 +31,7 @@
     }
 
     &_benefitList {
+      gap: 2.4rem;
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -73,7 +74,7 @@
     &_wrapper {
       &_benefitList {
         flex-direction: column;
-
+        gap: unset;
         &_item {
           width: 100%;
           max-width: unset;

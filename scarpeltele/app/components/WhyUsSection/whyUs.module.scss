@@ -24,10 +24,47 @@
     }
   }
 }
+
+@media screen and (max-width: 1350px) {
+  .whyUs {
+    &_wrapper {
+      &_list {
+        justify-content: space-between;
+        &_item {
+          max-width: 19rem;
+          &_title {
+            margin-top: 1.2rem;
+            margin-bottom: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1201px) {
+  .whyUs {
+    &_wrapper {
+      &_list {
+        &_item {
+          max-width: 18rem;
+          &_title {
+            margin-top: 1.2rem;
+            margin-bottom: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .whyUs {
     &_wrapper {
       &_list {
+        justify-content: unset;
+        gap: 1.6rem;
+
         &_item {
           margin-right: 1.2rem;
         }

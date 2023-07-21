@@ -80,7 +80,22 @@
     }
   }
 }
+@media screen and (max-width: 1400px) {
+  .slide {
+    max-width: 37rem;
+  }
+}
+@media screen and (max-width: 1270px) {
+  .slide {
+    max-width: 35rem;
+  }
+}
 
+@media screen and (max-width: 1190px) {
+  .slide {
+    max-width: 33rem;
+  }
+}
 @media screen and (max-width: 768px) {
   .events {
     &_wrapper {
