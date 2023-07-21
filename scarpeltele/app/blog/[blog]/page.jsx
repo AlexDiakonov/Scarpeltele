@@ -33,7 +33,7 @@ const BlogPost = () => {
       fetchPost();
       getPosts(setAllPosts);
     }
-  }, [blog, fetchPost, getPosts]);
+  }, [blog, fetchPost, getPosts, post, allPosts]);
 
   return (
     <Layout>
