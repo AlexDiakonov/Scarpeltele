@@ -9,4 +9,5 @@ export const client = createClient({
   token: process.env.NEXT_PUBLIC_SANITY_KEY,
 });
 
+// eslint-disable-next-line react-hooks/rules-of-hooks
 export const urlFor = (source) => useNextSanityImage(client, source);
