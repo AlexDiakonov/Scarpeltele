@@ -18,7 +18,6 @@
     gap: 2.4rem;
 
     &_item0 {
-      width: 58.8rem;
       grid-row: span 2;
       border: 1px solid $black10;
       border-radius: 8px;
@@ -36,8 +35,7 @@
 
     &_item1,
     &_item2 {
-      width: 58.8rem;
-      height: 21.2rem;
+      height: 100%;
       display: flex;
       border: 1px solid $black10;
       border-radius: 8px;
