@@ -17,23 +17,24 @@ const BlogPost = () => {
   const [allPosts, setAllPosts] = useState([]);
   const { blog } = useParams();
 
-  const query = `*[_type == "post" && slug.current == "${blog}"][0]`;
-  const fetchPost = async () => {
-    const post = await client.fetch(query);
-    setPost(post);
-  };
-  const getPosts = async (setter) => {
-    const query = '*[_type == "post"] | order(_createdAt desc)';
-    const post = await client.fetch(query);
-
-    return setter(post);
-  };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
+    const fetchPost = async (setter) => {
+      const query = `*[_type == "post" && slug.current == "${blog}"][0]`;
+      const post = await client.fetch(query);
+      setter(post);
+    };
+    const getPosts = async (setter) => {
+      const query = '*[_type == "post"] | order(_createdAt desc)';
+      const post = await client.fetch(query);
+
+      return setter(post);
+    };
     if (!post.title && allPosts.length < 1) {
-      fetchPost();
+      fetchPost(setPost);
       getPosts(setAllPosts);
     }
-  }, [blog, fetchPost, getPosts, post, allPosts]);
+  }, [post, allPosts, blog]);
 
   return (
     <Layout>

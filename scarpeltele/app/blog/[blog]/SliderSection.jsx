@@ -8,6 +8,7 @@ import BlogItem from '../../components/BlogItem/BlogItem';
 import ContactUs from '../../components/ContactUs/ContactUs';
 
 const SliderSection = ({ allPosts }) => {
+  console.log(allPosts);
   return (
     <div className={styles.sliderSection}>
       <Container className={styles.sliderSection_wrapper}>
