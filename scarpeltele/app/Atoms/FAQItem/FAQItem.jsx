@@ -23,7 +23,12 @@ const FAQItem = ({ title, description, className }) => {
       className={classNames(styles.faqWrapper, className)}
     >
       <div className={styles.faqWrapper_fixPart}>
-        <Typography variant="body1">{title}</Typography>
+        <Typography
+          className={classNames({ [styles.active]: isOpen })}
+          variant="body1"
+        >
+          {title}
+        </Typography>
         <button
           onClick={dropDownHandler}
           className={classNames(styles.faqWrapper_fixPart_btn, {

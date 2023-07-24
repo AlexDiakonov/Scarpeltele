@@ -22,8 +22,8 @@ const Careers = () => {
           className={styles.careerSection_wrapper_description}
           variant="body1"
         >
-          Find out our open positions. I there is no one that match your
-          experience feel free to write us.
+          We’re seeking energetic and dedicated individuals to become part of
+          our Scarpel Telecom team – let's grow and innovate together!
         </Typography>
         <Button
           className={styles.careerSection_wrapper_navButton}

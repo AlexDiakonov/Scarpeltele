@@ -7,10 +7,11 @@ import Typography from '../../Atoms/Typography/Typography';
 import { urlFor } from '../../lib/client';
 import styles from './blogItem.module.scss';
 import classNames from 'classnames';
+import Link from 'next/link';
 
 const BlogItem = ({ item, className, imageWrapper }) => {
   return (
-    <a
+    <Link
       href={`/blog/${item?.slug.current}`}
       className={classNames(className, styles.post)}
     >
@@ -38,7 +39,7 @@ const BlogItem = ({ item, className, imageWrapper }) => {
           {item.description.slice(0, 85)}...
         </Typography>
       </div>
-    </a>
+    </Link>
   );
 };
 

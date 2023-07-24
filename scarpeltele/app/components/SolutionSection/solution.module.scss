@@ -1,5 +1,5 @@
 .solution {
-  padding: 10rem 0;
+  // padding: 10rem 0;
   display: flex;
   justify-content: center;
 
@@ -64,6 +64,14 @@
 
 @media screen and (max-width: 415px) {
   .solution {
+    &:target:before {
+      content: '';
+      display: block;
+      height: 60px; /* fixed header height*/
+      margin: -60px 0 0; /* negative fixed header height */
+    }
+    &_title {
+    }
     &_list {
       flex-direction: column;
       &_item {

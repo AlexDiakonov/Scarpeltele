@@ -10,8 +10,8 @@ import styles from './whyUs.module.scss';
 
 const WhyUs = () => {
   return (
-    <div id="whyUs" className={styles.whyUs}>
-      <Container className={styles.whyUs_wrapper}>
+    <div className={styles.whyUs}>
+      <Container id="whyUs" className={styles.whyUs_wrapper}>
         <Typography
           className={styles.whyUs_wrapper_title}
           component="h2"

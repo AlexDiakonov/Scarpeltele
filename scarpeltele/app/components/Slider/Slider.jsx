@@ -4,7 +4,8 @@ import Slider from 'react-slick';
 import BigArrowBack from '../../assets/icons/BigArrowBack';
 import BigArrowForward from '../../assets/icons/BigArrowForward';
 import styles from './slider.module.scss';
-
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 const SlickArrowLeft = ({ onClick }) => (
   <button className={`${styles.arrow_left}`} onClick={onClick}>
     <BigArrowBack />

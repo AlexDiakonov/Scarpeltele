@@ -11,13 +11,10 @@ import ReachYourAudience from './components/ReachYouAudience/ReachYourAudience.j
 import Achievements from './components/Achievements/Achievements.jsx';
 import ContactUs from './components/ContactUs/ContactUs.jsx';
 import Blog from './components/Blog/Blog.jsx';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import FAQ from './components/FAQ/FAQ.jsx';
 import { client } from './lib/client.js';
-import NavBar from './components/NavBar/NavBar.jsx';
-import Footer from './components/Footer/Footer.jsx';
 
 const Home = async () => {
   const query = `*[_type == "post"] | order(_createdAt desc) [0...3]`; // Query to fetch last 3 posts

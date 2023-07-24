@@ -6,18 +6,24 @@ import MainLogo from '../../assets/icons/MainLogo';
 import { usePathname } from 'next/navigation';
 import Button from '../../Atoms/Button/Button';
 import Typography from '../../Atoms/Typography/Typography';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useClickOutside from '../../utils/useClickOutside';
+import Link from 'next/link';
 
 const NavBar = () => {
   const pathName = usePathname();
   const [open, setOpen] = useState(false);
+  // const [hash, setHash] = useState('');
   const ref = useRef(null);
 
+  // console.log(window.location.hash);
   const menuToggle = () => {
     setOpen(!open);
   };
 
+  // useEffect(() => {
+  //   setHash(window.location.hash)
+  // }, [window.location.hash]);
   useClickOutside(ref, () => setOpen(false), open);
 
   return (
@@ -41,7 +47,7 @@ const NavBar = () => {
                     styles.navWrapper_menuContainer_organizer_menu_item
                   }
                 >
-                  <a
+                  <Link
                     className={classNames(
                       {
                         [styles.active]: pathName === '/',
@@ -60,7 +66,7 @@ const NavBar = () => {
                     >
                       Home
                     </Typography>
-                  </a>
+                  </Link>
                 </li>
                 <li
                   className={
@@ -70,7 +76,7 @@ const NavBar = () => {
                   <a
                     className={classNames(
                       {
-                        [styles.active]: pathName === '/solutions',
+                        [styles.active]: pathName === '#solution',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,

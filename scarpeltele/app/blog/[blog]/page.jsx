@@ -10,13 +10,13 @@ import { client } from '../../lib/client';
 import styles from './blogPage.module.scss';
 import Content from './Content';
 import SliderSection from './SliderSection';
-import { getPosts } from '../../service/fetchService';
+import SlickSlider from '@/app/components/Slider/Slider';
 
 const BlogPost = () => {
   const [post, setPost] = useState({});
   const [allPosts, setAllPosts] = useState([]);
   const { blog } = useParams();
-
+  console.log(allPosts);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const fetchPost = async (setter) => {
@@ -58,6 +58,7 @@ const BlogPost = () => {
         </div>
         {post?.title && <Content post={post} />}
       </Container>
+
       {allPosts?.length > 0 && <SliderSection allPosts={allPosts} />}
     </Layout>
   );

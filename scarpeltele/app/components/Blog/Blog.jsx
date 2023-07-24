@@ -37,11 +37,11 @@ const Blog = ({ posts }) => {
               target="_blank"
             >
               <div className={styles[`blog_grid_item${idx}_imageWrapper`]}>
-                <Image
+                <img
                   className={styles[`blog_grid_item${idx}_imageWrapper_img`]}
-                  src={urlFor(item.mainImage)}
+                  src={urlFor(posts[0].mainImage).src}
                   alt="blog_image"
-                ></Image>
+                />
               </div>
               <div
                 className={classNames(

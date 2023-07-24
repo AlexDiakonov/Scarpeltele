@@ -6,7 +6,9 @@
   border: 1px solid $black10;
   transition: 100ms linear all;
   border-radius: 8px;
-
+  // .active {
+  //   color: $secondary-blue;
+  // }
   &:hover {
     border: 1px solid $secondary-blue;
 
@@ -66,11 +68,15 @@
 
     &_btnClose {
       &:after {
+        color: $secondary-blue;
+
         transition: all 200ms linear;
         transform: rotate(-45deg);
       }
 
       &:before {
+        color: $secondary-blue;
+
         transition: all 200ms linear;
         transform: rotate(45deg);
       }
@@ -92,5 +98,32 @@
     margin-top: 2.4rem;
     max-height: 300px;
     transition: all 0.2s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .faqWrapper {
+    .active {
+      color: $secondary-blue;
+    }
+    &:hover {
+      border: 1px solid $secondary-blue;
+
+      .faqWrapper_fixPart {
+        color: $secondary-blue;
+      }
+
+      .faqWrapper_fixPart {
+        &_btn {
+          &:before,
+          &:after {
+            background-color: $secondary-blue;
+          }
+        }
+      }
+    }
+    &:hover > &_dropDown > &_dropDown_description {
+      color: $basic-82black;
+    }
   }
 }

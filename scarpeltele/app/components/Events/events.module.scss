@@ -4,10 +4,7 @@
   background-color: $secondary-green-lighter;
   padding-bottom: 8.7rem;
   &_wrapper {
-    &_titleWrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    &_title {
       margin-bottom: 2.4rem;
     }
 
@@ -74,6 +71,7 @@
         max-width: 10.2rem;
 
         &_logo {
+          max-height: 6rem;
           object-fit: contain;
         }
       }

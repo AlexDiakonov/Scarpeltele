@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './blogPage.module.scss';
 import Container from '../../Atoms/Container/Container';
 import Typography from '../../Atoms/Typography/Typography';
-import SlickSlider from '../../components/Slider/Slider';
+import Slider from '../../components/Slider/Slider';
 import BlogItem from '../../components/BlogItem/BlogItem';
 import ContactUs from '../../components/ContactUs/ContactUs';
 
@@ -19,8 +19,8 @@ const SliderSection = ({ allPosts }) => {
         >
           Read next
         </Typography>
-        <SlickSlider>
-          {allPosts.map((item) => (
+        <Slider>
+          {allPosts?.map((item) => (
             <BlogItem
               key={item._id}
               className={styles.sliderItem}
@@ -28,7 +28,7 @@ const SliderSection = ({ allPosts }) => {
               item={item}
             />
           ))}
-        </SlickSlider>
+        </Slider>
       </Container>
       <ContactUs />
     </div>

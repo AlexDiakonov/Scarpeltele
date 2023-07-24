@@ -23,7 +23,7 @@ const ReachYourAudience = () => {
           SMS marketing will increase your customer&#39;s lifetime value,
           generate more leads, and help you grow and protect your business.
         </Typography>
-        <Button href="#" link={true} variant="borderAndTransparent">
+        <Button href="/#contact" link={true} variant="borderAndTransparent">
           Book a demo
         </Button>
       </div>
