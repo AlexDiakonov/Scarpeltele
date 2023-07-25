@@ -26,8 +26,7 @@ const Solution = () => {
   //   } else router.push('');
   // }, [isVisible]);
   return (
-    <Container observedEl id="solution" className={styles.solution}>
-      <div observedEl></div>
+    <Container id="solution" className={styles.solution}>
       <Typography
         className={styles.solution_title}
         component="h2"

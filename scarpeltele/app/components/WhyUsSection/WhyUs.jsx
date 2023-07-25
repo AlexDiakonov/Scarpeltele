@@ -56,7 +56,7 @@ const WhyUs = () => {
           <li className={styles.whyUs_wrapper_list_item}>
             <Support />
 
-            <div observedEl>
+            <div>
               <Typography
                 className={styles.whyUs_wrapper_list_item_title}
                 component="h6"
