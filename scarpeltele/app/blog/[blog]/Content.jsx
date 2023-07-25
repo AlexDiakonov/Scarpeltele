@@ -1,5 +1,4 @@
 import Typography from '../../Atoms/Typography/Typography';
-import Img from 'next/image';
 import { urlFor } from '../../lib/client';
 import { format } from 'date-fns';
 import styles from './blogPage.module.scss';
@@ -22,10 +21,10 @@ const Content = ({ post }) => {
         {post.title}
       </Typography>
       <div className={styles.content_heroWrap}>
-        <Img
+        <img
           className={styles.content_heroWrap_img}
           alt="hero_img"
-          src={urlFor(post.mainImage)}
+          src={urlFor(post.mainImage).src}
         />
       </div>
       <Typography
@@ -37,10 +36,10 @@ const Content = ({ post }) => {
       <div className={styles.content_footer}>
         <div className={styles.content_footer_author}>
           <div className={styles.content_footer_author_imgWrap}>
-            <Img
+            <img
               className={styles.content_footer_author_imgWrap_img}
               alt="user_avatar"
-              src={urlFor(post.authorImage)}
+              src={urlFor(post.authorImage).src}
             />
           </div>
           <div className={styles.content_footer_author_wrapper}>
