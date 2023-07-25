@@ -10,7 +10,7 @@
 
     &_list {
       display: flex;
-
+      margin-bottom: 6rem;
       flex-wrap: wrap;
 
       &_item {
@@ -64,7 +64,7 @@
       &_list {
         justify-content: unset;
         gap: 1.6rem;
-
+        margin-bottom: 7.5rem;
         &_item {
           margin-right: 1.2rem;
         }
@@ -76,6 +76,8 @@
   .whyUs {
     &_wrapper {
       &_list {
+        margin-bottom: 6rem;
+
         &_item {
           display: flex;
           width: 100%;

@@ -4,7 +4,6 @@ import Container from '../Atoms/Container/Container';
 import Pencil from '../assets/illustrations/Pencil';
 import { urlFor, client } from '../lib/client';
 import styles from './blog.module.scss';
-import Img from 'next/image';
 import { format } from 'date-fns';
 import ArrowTopRight from '../assets/icons/ArrowTopRight';
 
@@ -25,11 +24,11 @@ const HeroSection = ({ post }) => {
         </Typography>
         <a href={`/blog/${post?.slug.current}`} className={styles.post}>
           <div className={styles.post_imgWrapper}>
-            <Img
+            <img
               className={styles.post_imgWrapper_img}
               alt="hero_image"
-              src={urlFor(post.mainImage)}
-            ></Img>
+              src={urlFor(post.mainImage).src}
+            ></img>
           </div>
           <div className={styles.post_content}>
             <div className={styles.post_content_dateWrapper}>

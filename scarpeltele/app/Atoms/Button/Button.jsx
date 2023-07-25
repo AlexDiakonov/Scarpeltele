@@ -7,6 +7,7 @@ const Button = ({
   className,
   link = false,
   type = 'button',
+  target = '',
   href = '#',
 }) => {
   const buttonClasses = classNames(
@@ -20,7 +21,7 @@ const Button = ({
   );
 
   return link ? (
-    <a href={href} className={buttonClasses}>
+    <a href={href} target={target} className={buttonClasses}>
       {children}
     </a>
   ) : (

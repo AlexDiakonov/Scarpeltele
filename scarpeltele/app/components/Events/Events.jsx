@@ -9,7 +9,7 @@ import { urlFor } from '../../lib/client';
 
 const Events = ({ events }) => {
   return (
-    <div className={styles.events}>
+    <div id="events" className={styles.events}>
       <Container className={styles.events_wrapper}>
         <Typography
           className={styles.events_wrapper_title}
@@ -38,9 +38,9 @@ const Events = ({ events }) => {
                 style={{ display: 'block' }}
               >
                 <div className={styles.slide_imgWrap}>
-                  <Image
+                  <img
                     className={styles.slide_imgWrap_img}
-                    src={urlFor(item.mainImage)}
+                    src={urlFor(item.mainImage).src}
                     alt="event_img"
                   />
                 </div>
@@ -75,13 +75,13 @@ const Events = ({ events }) => {
                         styles.slide_content_locationWrapper_logoWrapper
                       }
                     >
-                      <Image
+                      <img
                         className={
                           styles.slide_content_locationWrapper_logoWrapper_logo
                         }
                         alt="event_logo"
-                        src={urlFor(item.eventLogo)}
-                      ></Image>
+                        src={urlFor(item.eventLogo).src}
+                      ></img>
                     </div>
                   </div>
                 </div>

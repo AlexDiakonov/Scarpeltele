@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
 import Container from '../../Atoms/Container/Container';
 import Typography from '../../Atoms/Typography/Typography';
 import PaperPlane from '../../assets/illustrations/PaperPlane';
@@ -11,10 +12,22 @@ import TwoArrows from '../../assets/illustrations/TwoArrows';
 import ThreeStars from '../../assets/illustrations/ThreeStars';
 import Check from '../../assets/illustrations/Check';
 import styles from './solution.module.scss';
+import { useRouter } from 'next/navigation';
+import useObserve from '@/app/utils/useObserve';
 
 const Solution = () => {
+  const router = useRouter();
+  const ref = useRef();
+  const isVisible = useObserve(ref);
+  console.log(isVisible);
+  // useEffect(() => {
+  //   if (isVisible) {
+  //     router.push('/#solution');
+  //   } else router.push('');
+  // }, [isVisible]);
   return (
-    <Container id="solution" className={styles.solution}>
+    <Container observedEl id="solution" className={styles.solution}>
+      <div observedEl></div>
       <Typography
         className={styles.solution_title}
         component="h2"
@@ -71,7 +84,7 @@ const Solution = () => {
         </li>
         <li className={styles.solution_list_item}>
           <QandA />
-          <div className={styles.solution_list_item_text}>
+          <div ref={ref} className={styles.solution_list_item_text}>
             <Typography component="h6" variant="h6Title">
               Messengers
             </Typography>

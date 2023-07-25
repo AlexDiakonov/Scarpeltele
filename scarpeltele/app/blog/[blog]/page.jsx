@@ -16,7 +16,7 @@ const BlogPost = () => {
   const [post, setPost] = useState({});
   const [allPosts, setAllPosts] = useState([]);
   const { blog } = useParams();
-  console.log(allPosts);
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const fetchPost = async (setter) => {

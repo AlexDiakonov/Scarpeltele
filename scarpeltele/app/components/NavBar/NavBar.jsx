@@ -9,14 +9,18 @@ import Typography from '../../Atoms/Typography/Typography';
 import { useEffect, useRef, useState } from 'react';
 import useClickOutside from '../../utils/useClickOutside';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const NavBar = () => {
   const pathName = usePathname();
   const [open, setOpen] = useState(false);
   // const [hash, setHash] = useState('');
-  const ref = useRef(null);
 
-  // console.log(window.location.hash);
+  const ref = useRef(null);
+  // const handleScroll = (element) => {
+  //   document.getElementById(element).scrollIntoView({ behavior: 'smooth' });
+  // };
+  // console.log(window);
   const menuToggle = () => {
     setOpen(!open);
   };

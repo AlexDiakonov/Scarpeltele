@@ -16,10 +16,10 @@ const BlogItem = ({ item, className, imageWrapper }) => {
       className={classNames(className, styles.post)}
     >
       <div className={classNames(styles.post_imgWrapper, imageWrapper)}>
-        <Img
+        <img
           className={styles.post_imgWrapper_img}
           alt="blog_image"
-          src={urlFor(item?.mainImage)}
+          src={urlFor(item?.mainImage).src}
         />
       </div>
       <div className={styles.post_content}>

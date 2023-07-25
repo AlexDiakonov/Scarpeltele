@@ -7,6 +7,7 @@ import Support from '../../assets/illustrations/Support';
 import Globe from '../../assets/illustrations/Globe';
 import Puzzle from '../../assets/illustrations/Puzzle';
 import styles from './whyUs.module.scss';
+import Button from '@/app/Atoms/Button/Button';
 
 const WhyUs = () => {
   return (
@@ -54,7 +55,8 @@ const WhyUs = () => {
           </li>
           <li className={styles.whyUs_wrapper_list_item}>
             <Support />
-            <div>
+
+            <div observedEl>
               <Typography
                 className={styles.whyUs_wrapper_list_item_title}
                 component="h6"
@@ -101,6 +103,13 @@ const WhyUs = () => {
             </div>
           </li>
         </ul>
+        <Button
+          target="_blank"
+          href="https://assets.scarpeltele.com/Scarpel_EN_clients.pdf"
+          link={true}
+        >
+          Check out our PDF presentation
+        </Button>
       </Container>
     </div>
   );
