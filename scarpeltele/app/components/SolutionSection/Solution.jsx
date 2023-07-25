@@ -18,7 +18,7 @@ import useObserve from '@/app/utils/useObserve';
 const Solution = () => {
   const router = useRouter();
   const ref = useRef();
-  const isVisible = useObserve(ref);
+  // const isVisible = useObserve(ref);
   console.log(isVisible);
   // useEffect(() => {
   //   if (isVisible) {

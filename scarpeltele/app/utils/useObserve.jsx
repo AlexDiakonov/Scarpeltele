@@ -1,24 +1,24 @@
 'use client';
-import { useEffect, useState, useMemo } from 'react';
+// import { useEffect, useState, useMemo } from 'react';
 
-const useObserve = (ref) => {
-  const [isIntersecting, setIntersecting] = useState(false);
+// const useObserve = (ref) => {
+//   const [isIntersecting, setIntersecting] = useState(false);
 
-  const observer = useMemo(
-    () =>
-      new IntersectionObserver(([entry]) => {
-        console.log(entry);
-        setIntersecting(entry.isIntersecting);
-      }),
-    [ref],
-  );
+//   const observer = useMemo(
+//     () =>
+//       new IntersectionObserver(([entry]) => {
+//         console.log(entry);
+//         setIntersecting(entry.isIntersecting);
+//       }),
+//     [ref],
+//   );
 
-  useEffect(() => {
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+//   useEffect(() => {
+//     observer.observe(ref.current);
+//     return () => observer.disconnect();
+//   }, []);
 
-  return isIntersecting;
-};
+//   return isIntersecting;
+// };
 
-export default useObserve;
+// export default useObserve;
