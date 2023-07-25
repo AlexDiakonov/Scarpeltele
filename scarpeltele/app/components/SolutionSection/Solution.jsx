@@ -16,10 +16,10 @@ import { useRouter } from 'next/navigation';
 import useObserve from '@/app/utils/useObserve';
 
 const Solution = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const ref = useRef();
   // const isVisible = useObserve(ref);
-  console.log(isVisible);
+  // console.log(isVisible);
   // useEffect(() => {
   //   if (isVisible) {
   //     router.push('/#solution');
