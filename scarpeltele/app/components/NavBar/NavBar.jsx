@@ -31,6 +31,8 @@ const NavBar = () => {
 
       if (visibleSection) {
         setActiveSection(visibleSection.id);
+      } else {
+        setActiveSection('');
       }
     });
 

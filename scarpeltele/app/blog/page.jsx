@@ -1,3 +1,5 @@
+'use client';
+
 import HeroSection from './HeroSection';
 import Layout from '../components/Layout/Layout';
 import { client } from '../lib/client';

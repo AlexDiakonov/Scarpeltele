@@ -13,7 +13,6 @@ const BlogPostsSection = () => {
   const [totalItems, setTotalItems] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const containerRef = useRef(null);
-  const windowWidth = window.innerWidth;
 
   const itemsPerPage = 8;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -39,13 +38,13 @@ const BlogPostsSection = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    if (windowWidth) {
+    if (typeof window !== 'undefined') {
       const container = containerRef.current;
       const items = container.getElementsByClassName(
         styles.postSection_postWrapper_item,
       );
       const itemCount = items.length;
-      if (windowWidth > 1024) {
+      if (window?.innerWidth > 1024) {
         for (let i = 0; i < itemCount; i++) {
           const item = items[i];
 
@@ -56,7 +55,7 @@ const BlogPostsSection = () => {
           }
         }
       }
-      if (windowWidth <= 1024) {
+      if (window?.innerWidth <= 1024) {
         for (let i = 0; i < itemCount; i++) {
           const item = items[i];
 
@@ -66,7 +65,7 @@ const BlogPostsSection = () => {
         }
       }
     }
-  }, [posts, currentPage, windowWidth]);
+  }, [posts, currentPage]);
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);

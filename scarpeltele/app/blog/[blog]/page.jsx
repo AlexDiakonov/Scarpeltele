@@ -10,7 +10,6 @@ import { client } from '../../lib/client';
 import styles from './blogPage.module.scss';
 import Content from './Content';
 import SliderSection from './SliderSection';
-import SlickSlider from '@/app/components/Slider/Slider';
 
 const BlogPost = () => {
   const [post, setPost] = useState({});
