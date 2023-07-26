@@ -13,6 +13,7 @@ const BlogPostsSection = () => {
   const [totalItems, setTotalItems] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const containerRef = useRef(null);
+  const windowWidth = window.innerWidth;
 
   const itemsPerPage = 8;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -21,6 +22,7 @@ const BlogPostsSection = () => {
     const fetchData = async () => {
       const startIndex = currentPage * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
+
       const query = `*[_type == "post"] | order(_createdAt desc) [${
         startIndex + 1
       }...${endIndex + 1}]`;
@@ -37,13 +39,13 @@ const BlogPostsSection = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (windowWidth) {
       const container = containerRef.current;
       const items = container.getElementsByClassName(
         styles.postSection_postWrapper_item,
       );
       const itemCount = items.length;
-      if (window?.innerWidth > 1024) {
+      if (windowWidth > 1024) {
         for (let i = 0; i < itemCount; i++) {
           const item = items[i];
 
@@ -54,7 +56,7 @@ const BlogPostsSection = () => {
           }
         }
       }
-      if (window?.innerWidth <= 1024) {
+      if (windowWidth <= 1024) {
         for (let i = 0; i < itemCount; i++) {
           const item = items[i];
 
@@ -64,7 +66,7 @@ const BlogPostsSection = () => {
         }
       }
     }
-  }, [posts, currentPage, window]);
+  }, [posts, currentPage, windowWidth]);
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
