@@ -11,8 +11,8 @@ import Button from '@/app/Atoms/Button/Button';
 
 const WhyUs = () => {
   return (
-    <div className={styles.whyUs}>
-      <Container id="whyUs" className={styles.whyUs_wrapper}>
+    <div data-section id="whyUs" className={styles.whyUs}>
+      <Container className={styles.whyUs_wrapper}>
         <Typography
           className={styles.whyUs_wrapper_title}
           component="h2"

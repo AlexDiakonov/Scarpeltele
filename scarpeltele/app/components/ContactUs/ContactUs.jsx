@@ -75,7 +75,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div id="contact" className={styles.contactUs}>
+    <div data-section id="contact" className={styles.contactUs}>
       <MobileS className={styles.contactUs_mobileImage} />
 
       <ToastContainer

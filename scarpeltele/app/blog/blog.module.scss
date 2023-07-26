@@ -1,8 +1,13 @@
 @import '../styles/variables';
 .blogHero {
+  .mobilePencil {
+    display: none;
+  }
   padding-top: 9.6rem;
   background-color: $secondary-blue-light;
-
+  .noPc {
+    display: none;
+  }
   &_wrapper {
     position: relative;
 
@@ -136,6 +141,168 @@
     &_selected {
       background-color: $primary-blue;
       color: $basic-white;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .blogHero {
+    position: relative;
+    .mobilePencil {
+      display: block;
+      position: absolute;
+      right: -8rem;
+    }
+    &_wrapper {
+      &_bg {
+        display: none;
+      }
+
+      &_title {
+      }
+    }
+    .NoMobile {
+      display: none;
+    }
+    .noPc {
+      display: block;
+    }
+  }
+  .post {
+    flex-direction: column;
+    &_imgWrapper {
+      &_img {
+        object-fit: cover;
+      }
+    }
+    &_content {
+      &_dateWrapper {
+        &_date {
+          &:after {
+          }
+        }
+      }
+
+      &_title {
+      }
+
+      &_description {
+      }
+    }
+  }
+
+  .postSection {
+    &_postWrapper {
+      flex-direction: column;
+      gap: unset;
+      margin-bottom: 0;
+      &_item {
+        width: 100%;
+        display: flex;
+        max-height: 19.8rem;
+        &:not(:last-child) {
+          margin-bottom: 2.4rem;
+        }
+        &.fourthItem {
+          max-height: unset;
+          flex-direction: column;
+          margin-top: 2.4rem;
+          margin-bottom: 4.8rem;
+          & > .imgWrapper {
+            height: 39.8rem;
+            & > img {
+              max-height: 100%;
+            }
+          }
+        }
+
+        &.threeItems {
+          & > .imgWrapper {
+            & > img {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .blogHero {
+    .mobilePencil {
+      max-width: 14rem;
+      right: -4.5rem;
+      top: 5.5rem;
+    }
+    &_wrapper {
+      &_bg {
+        display: none;
+      }
+
+      &_title {
+      }
+    }
+    .NoMobile {
+      display: none;
+    }
+    .noPc {
+      display: block;
+    }
+  }
+  .post {
+    flex-direction: column;
+
+    &_imgWrapper {
+      &_img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &_content {
+      &_dateWrapper {
+        &_date {
+          &:after {
+          }
+        }
+      }
+
+      &_title {
+      }
+
+      &_description {
+      }
+    }
+  }
+
+  .postSection {
+    &_postWrapper {
+      flex-direction: column;
+      gap: unset;
+      margin-bottom: 0;
+      & > .fourthItem {
+        max-height: unset;
+        flex-direction: column;
+        margin-top: unset;
+        &:not(:last-child) {
+          margin-bottom: 4.8rem;
+        }
+        & > .imgWrapper {
+          height: unset;
+          & > img {
+            max-height: 100%;
+          }
+        }
+      }
+      &_item {
+        &:not(:last-child) {
+          margin-bottom: 4.8rem;
+        }
+        max-height: unset;
+        flex-direction: column;
+        & > .imgWrapper {
+          height: 19.8rem;
+        }
+      }
     }
   }
 }

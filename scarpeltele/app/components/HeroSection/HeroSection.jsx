@@ -11,7 +11,7 @@ import styles from './hero.module.scss';
 
 const HeroSection = () => {
   return (
-    <div className={styles.heroSection}>
+    <div data-section id="hero" className={styles.heroSection}>
       <LeftHeroSectionImage className={styles.heroSection_leftImage} />
       <RightHeroSectionImage className={styles.heroSection_rightImage} />
       <Container className={styles.heroSection_wrapper}>

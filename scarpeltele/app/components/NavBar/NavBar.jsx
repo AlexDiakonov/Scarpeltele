@@ -14,20 +14,39 @@ import { useRouter } from 'next/router';
 const NavBar = () => {
   const pathName = usePathname();
   const [open, setOpen] = useState(false);
-  // const [hash, setHash] = useState('');
+  const [activeSection, setActiveSection] = useState(null);
+  const observer = useRef(null);
 
   const ref = useRef(null);
-  // const handleScroll = (element) => {
-  //   document.getElementById(element).scrollIntoView({ behavior: 'smooth' });
-  // };
-  // console.log(window);
+
   const menuToggle = () => {
     setOpen(!open);
   };
 
-  // useEffect(() => {
-  //   setHash(window.location.hash)
-  // }, [window.location.hash]);
+  useEffect(() => {
+    observer.current = new IntersectionObserver((entries) => {
+      const visibleSection = entries.find(
+        (entry) => entry.isIntersecting,
+      )?.target;
+
+      if (visibleSection) {
+        setActiveSection(visibleSection.id);
+      }
+    });
+
+    const sections = document.querySelectorAll('[data-section]');
+
+    sections.forEach((section) => {
+      observer.current.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.current.unobserve(section);
+      });
+    };
+  }, [observer, setActiveSection]);
+
   useClickOutside(ref, () => setOpen(false), open);
 
   return (
@@ -54,7 +73,7 @@ const NavBar = () => {
                   <Link
                     className={classNames(
                       {
-                        [styles.active]: pathName === '/',
+                        [styles.active]: activeSection === 'hero',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
@@ -80,7 +99,7 @@ const NavBar = () => {
                   <a
                     className={classNames(
                       {
-                        [styles.active]: pathName === '#solution',
+                        [styles.active]: activeSection === 'solution',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
@@ -106,7 +125,7 @@ const NavBar = () => {
                   <a
                     className={classNames(
                       {
-                        [styles.active]: pathName === '#/whyUs',
+                        [styles.active]: activeSection === 'whyUs',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
@@ -132,7 +151,7 @@ const NavBar = () => {
                   <a
                     className={classNames(
                       {
-                        [styles.active]: pathName === '/about',
+                        [styles.active]: activeSection === 'about',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
@@ -158,7 +177,7 @@ const NavBar = () => {
                   <a
                     className={classNames(
                       {
-                        [styles.active]: pathName === '/events',
+                        [styles.active]: activeSection === 'events',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
@@ -176,6 +195,7 @@ const NavBar = () => {
                     </Typography>
                   </a>
                 </li>
+
                 <li
                   className={
                     styles.navWrapper_menuContainer_organizer_menu_item
@@ -184,33 +204,7 @@ const NavBar = () => {
                   <a
                     className={classNames(
                       {
-                        [styles.active]: pathName === '/blog',
-                      },
-                      [
-                        styles.navWrapper_menuContainer_organizer_menu_item_link,
-                      ],
-                    )}
-                    href="/blog"
-                  >
-                    <Typography
-                      className={
-                        styles.navWrapper_menuContainer_organizer_menu_item_link_text
-                      }
-                      variant="body2"
-                    >
-                      Blog
-                    </Typography>
-                  </a>
-                </li>
-                <li
-                  className={
-                    styles.navWrapper_menuContainer_organizer_menu_item
-                  }
-                >
-                  <a
-                    className={classNames(
-                      {
-                        [styles.active]: pathName === '/contact',
+                        [styles.active]: activeSection === 'contact',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
@@ -225,6 +219,33 @@ const NavBar = () => {
                       variant="body2"
                     >
                       Contact
+                    </Typography>
+                  </a>
+                </li>
+                <li
+                  className={
+                    styles.navWrapper_menuContainer_organizer_menu_item
+                  }
+                >
+                  <a
+                    className={classNames(
+                      {
+                        [styles.active]:
+                          pathName === '/blog' || activeSection === 'blog',
+                      },
+                      [
+                        styles.navWrapper_menuContainer_organizer_menu_item_link,
+                      ],
+                    )}
+                    href="/blog"
+                  >
+                    <Typography
+                      className={
+                        styles.navWrapper_menuContainer_organizer_menu_item_link_text
+                      }
+                      variant="body2"
+                    >
+                      Blog
                     </Typography>
                   </a>
                 </li>

@@ -2,14 +2,13 @@
 import Typography from '../../Atoms/Typography/Typography';
 import Container from '../../Atoms/Container/Container';
 import styles from './events.module.scss';
-import Image from 'next/image';
 import Location from '../../assets/icons/Location';
 import Slider from '../Slider/Slider';
 import { urlFor } from '../../lib/client';
 
 const Events = ({ events }) => {
   return (
-    <div id="events" className={styles.events}>
+    <div data-section id="events" className={styles.events}>
       <Container className={styles.events_wrapper}>
         <Typography
           className={styles.events_wrapper_title}

@@ -12,7 +12,6 @@ const BlogPostsSection = () => {
   const [posts, setPosts] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-
   const containerRef = useRef(null);
 
   const itemsPerPage = 8;
@@ -42,17 +41,27 @@ const BlogPostsSection = () => {
       styles.postSection_postWrapper_item,
     );
     const itemCount = items.length;
+    if (window?.innerWidth > 1024) {
+      for (let i = 0; i < itemCount; i++) {
+        const item = items[i];
 
-    for (let i = 0; i < itemCount; i++) {
-      const item = items[i];
-
-      if (i % 5 === 0 || i % 5 === 1 || i % 5 === 2) {
-        item.classList.add(styles.threeItems);
-      } else {
-        item.classList.add(styles.twoItems);
+        if (i % 5 === 0 || i % 5 === 1 || i % 5 === 2) {
+          item.classList.add(styles.threeItems);
+        } else {
+          item.classList.add(styles.twoItems);
+        }
       }
     }
-  }, [posts, currentPage]);
+    if (window?.innerWidth <= 1024) {
+      for (let i = 0; i < itemCount; i++) {
+        const item = items[i];
+
+        if (i % 4 === 3) {
+          item.classList.add(styles.fourthItem);
+        }
+      }
+    }
+  }, [posts, currentPage, window?.innerWidth]);
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);

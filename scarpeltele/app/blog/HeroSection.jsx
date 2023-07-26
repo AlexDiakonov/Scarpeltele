@@ -2,25 +2,35 @@
 import Typography from '../Atoms/Typography/Typography';
 import Container from '../Atoms/Container/Container';
 import Pencil from '../assets/illustrations/Pencil';
-import { urlFor, client } from '../lib/client';
+import { urlFor } from '../lib/client';
 import styles from './blog.module.scss';
 import { format } from 'date-fns';
 import ArrowTopRight from '../assets/icons/ArrowTopRight';
+import classNames from 'classnames';
 
 const HeroSection = ({ post }) => {
   const date = format(new Date(post?.publishedAt), 'dd MMM yyyy');
 
   return (
     <div className={styles.blogHero}>
+      <Pencil className={styles.mobilePencil} />
+
       <Container className={styles.blogHero_wrapper}>
         <Pencil className={styles.blogHero_wrapper_bg} />
-
         <Typography
-          className={styles.blogHero_wrapper_title}
+          className={classNames(styles.blogHero_wrapper_title, styles.NoMobile)}
           component="h1"
           variant="h1Title"
         >
           Scarpel Blog. News and insights
+        </Typography>
+        <Typography
+          className={classNames(styles.blogHero_wrapper_title, styles.noPc)}
+          component="h1"
+          variant="h1Title"
+        >
+          Scarpel Blog.
+          <br /> News and insights
         </Typography>
         <a href={`/blog/${post?.slug.current}`} className={styles.post}>
           <div className={styles.post_imgWrapper}>
