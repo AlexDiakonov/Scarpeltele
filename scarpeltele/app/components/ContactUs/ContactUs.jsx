@@ -75,7 +75,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div data-section id="contact" className={styles.contactUs}>
+    <div id="contact" className={styles.contactUs}>
       <MobileS className={styles.contactUs_mobileImage} />
 
       <ToastContainer
@@ -151,6 +151,7 @@ const ContactUs = () => {
               label={'Phone (optional)'}
             ></Input>
           </div>
+          <div data-section id="contac"></div>
           <Input
             inputHandler={inputHandler}
             label={'Message'}

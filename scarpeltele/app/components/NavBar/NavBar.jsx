@@ -47,7 +47,7 @@ const NavBar = () => {
         });
       };
     }
-  }, [observer, setActiveSection]);
+  }, [observer, setActiveSection, pathName]);
 
   useClickOutside(ref, () => setOpen(false), open);
 
@@ -206,7 +206,7 @@ const NavBar = () => {
                   <a
                     className={classNames(
                       {
-                        [styles.active]: activeSection === 'contact',
+                        [styles.active]: activeSection === 'contac',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
@@ -233,7 +233,7 @@ const NavBar = () => {
                     className={classNames(
                       {
                         [styles.active]:
-                          pathName === '/blog' || activeSection === 'blog',
+                          pathName === '/blog' || activeSection === 'blo',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,

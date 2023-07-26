@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 const Blog = ({ posts }) => {
   return (
-    <div data-section id="blog">
+    <div id="blog">
       <Container className={styles.blog}>
         <div className={styles.blog_titleWrapper}>
           <Typography component="h2" variant="h2Title">
@@ -37,6 +37,7 @@ const Blog = ({ posts }) => {
                 target="_blank"
               >
                 <div className={styles[`blog_grid_item${idx}_imageWrapper`]}>
+                  <div data-section id="blo"></div>
                   <img
                     className={styles[`blog_grid_item${idx}_imageWrapper_img`]}
                     src={urlFor(posts[0].mainImage).src}
