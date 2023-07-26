@@ -26,7 +26,7 @@ const Blog = () => {
     if (!post.author) {
       getPost(setPost);
     }
-  }, [post]);
+  }, [post, setPost]);
 
   return (
     <Layout>
