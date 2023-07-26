@@ -12,14 +12,10 @@ import TwoArrows from '../../assets/illustrations/TwoArrows';
 import ThreeStars from '../../assets/illustrations/ThreeStars';
 import Check from '../../assets/illustrations/Check';
 import styles from './solution.module.scss';
-import { useRouter } from 'next/navigation';
-// import useObserve from '@/app/utils/useObserve';
 
 const Solution = () => {
-  // const router = useRouter();
-
   return (
-    <div data-section id="solution">
+    <div id="solution">
       <Container className={styles.solution}>
         <Typography
           className={styles.solution_title}
@@ -65,7 +61,11 @@ const Solution = () => {
           </li>
           <li className={styles.solution_list_item}>
             <TwoArrows />
-            <div className={styles.solution_list_item_text}>
+            <div
+              data-section
+              id="sol"
+              className={styles.solution_list_item_text}
+            >
               <Typography component="h6" variant="h6Title">
                 Message cascade
               </Typography>

@@ -115,6 +115,7 @@
 .wrapper {
   height: 21.8rem;
 }
+
 @media screen and (max-width: 1300px) {
   .sliderItem {
     max-width: unset;
@@ -122,11 +123,6 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .sliderItem {
-    width: 95%;
-  }
-}
 @media screen and (max-width: 600px) {
   .sliderItem {
     width: 100%;

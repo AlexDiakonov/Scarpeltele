@@ -11,7 +11,7 @@ import styles from './hero.module.scss';
 
 const HeroSection = () => {
   return (
-    <div data-section id="hero" className={styles.heroSection}>
+    <div className={styles.heroSection}>
       <LeftHeroSectionImage className={styles.heroSection_leftImage} />
       <RightHeroSectionImage className={styles.heroSection_rightImage} />
       <Container className={styles.heroSection_wrapper}>
@@ -28,6 +28,7 @@ const HeroSection = () => {
           href="#contact"
           className={styles.heroSection_wrapper_btn}
         >
+          <div data-section id="hero"></div>
           Contact An Expert
         </Button>
         <ul className={styles.heroSection_wrapper_benefitList}>

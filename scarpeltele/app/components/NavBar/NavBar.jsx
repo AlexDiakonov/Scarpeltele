@@ -24,6 +24,8 @@ const NavBar = () => {
   };
 
   useEffect(() => {
+    console.log(activeSection);
+
     observer.current = new IntersectionObserver((entries) => {
       const visibleSection = entries.find(
         (entry) => entry.isIntersecting,
@@ -31,8 +33,6 @@ const NavBar = () => {
 
       if (visibleSection) {
         setActiveSection(visibleSection.id);
-      } else {
-        setActiveSection('');
       }
     });
 
@@ -101,7 +101,7 @@ const NavBar = () => {
                   <a
                     className={classNames(
                       {
-                        [styles.active]: activeSection === 'solution',
+                        [styles.active]: activeSection === 'sol',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
@@ -127,7 +127,7 @@ const NavBar = () => {
                   <a
                     className={classNames(
                       {
-                        [styles.active]: activeSection === 'whyUs',
+                        [styles.active]: activeSection === 'why',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
