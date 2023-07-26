@@ -35,6 +35,7 @@ const BlogPostsSection = () => {
     fetchData();
   }, [currentPage]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const container = containerRef.current;
@@ -63,7 +64,7 @@ const BlogPostsSection = () => {
         }
       }
     }
-  }, [posts, currentPage, window?.innerWidth]);
+  }, [posts, currentPage, window]);
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
