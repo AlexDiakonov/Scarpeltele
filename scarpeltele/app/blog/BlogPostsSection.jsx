@@ -36,28 +36,30 @@ const BlogPostsSection = () => {
   }, [currentPage]);
 
   useEffect(() => {
-    const container = containerRef.current;
-    const items = container.getElementsByClassName(
-      styles.postSection_postWrapper_item,
-    );
-    const itemCount = items.length;
-    if (window?.innerWidth > 1024) {
-      for (let i = 0; i < itemCount; i++) {
-        const item = items[i];
+    if (typeof window !== 'undefined') {
+      const container = containerRef.current;
+      const items = container.getElementsByClassName(
+        styles.postSection_postWrapper_item,
+      );
+      const itemCount = items.length;
+      if (window?.innerWidth > 1024) {
+        for (let i = 0; i < itemCount; i++) {
+          const item = items[i];
 
-        if (i % 5 === 0 || i % 5 === 1 || i % 5 === 2) {
-          item.classList.add(styles.threeItems);
-        } else {
-          item.classList.add(styles.twoItems);
+          if (i % 5 === 0 || i % 5 === 1 || i % 5 === 2) {
+            item.classList.add(styles.threeItems);
+          } else {
+            item.classList.add(styles.twoItems);
+          }
         }
       }
-    }
-    if (window?.innerWidth <= 1024) {
-      for (let i = 0; i < itemCount; i++) {
-        const item = items[i];
+      if (window?.innerWidth <= 1024) {
+        for (let i = 0; i < itemCount; i++) {
+          const item = items[i];
 
-        if (i % 4 === 3) {
-          item.classList.add(styles.fourthItem);
+          if (i % 4 === 3) {
+            item.classList.add(styles.fourthItem);
+          }
         }
       }
     }
