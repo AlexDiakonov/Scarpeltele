@@ -24,29 +24,29 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    console.log(activeSection);
+    if (pathName === '/') {
+      observer.current = new IntersectionObserver((entries) => {
+        const visibleSection = entries.find(
+          (entry) => entry.isIntersecting,
+        )?.target;
 
-    observer.current = new IntersectionObserver((entries) => {
-      const visibleSection = entries.find(
-        (entry) => entry.isIntersecting,
-      )?.target;
-
-      if (visibleSection) {
-        setActiveSection(visibleSection.id);
-      }
-    });
-
-    const sections = document.querySelectorAll('[data-section]');
-
-    sections.forEach((section) => {
-      observer.current.observe(section);
-    });
-
-    return () => {
-      sections.forEach((section) => {
-        observer.current.unobserve(section);
+        if (visibleSection) {
+          setActiveSection(visibleSection.id);
+        }
       });
-    };
+
+      const sections = document.querySelectorAll('[data-section]');
+
+      sections.forEach((section) => {
+        observer.current.observe(section);
+      });
+
+      return () => {
+        sections.forEach((section) => {
+          observer.current.unobserve(section);
+        });
+      };
+    }
   }, [observer, setActiveSection]);
 
   useClickOutside(ref, () => setOpen(false), open);
