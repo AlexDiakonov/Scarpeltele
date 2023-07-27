@@ -7,8 +7,9 @@ import map from '../../assets/about/map.png';
 
 const About = () => {
   return (
-    <div data-section id="about">
+    <div id="about">
       <Container className={styles.about}>
+        <div className={styles.anchor} data-section id="abou"></div>
         <div className={styles.about_content}>
           <Typography
             component="h2"
@@ -21,9 +22,11 @@ const About = () => {
             className={styles.about_content_description}
             variant="body1"
           >
-            Our team is based all over the world. We are working remotely but we
-            always stay connected. Together we can hit any telecommunication
-            target, and we are doing so more than 10 years already.
+            OWe are here to help you deliver… Our team is based all over the
+            world. We are working remotely but we always stay connected. We've
+            been delivering A2P Messaging for over 10 years and we know all
+            about seamless SMS delivery that gets rapid results. Together we can
+            hit any telecommunication target.
           </Typography>
           <Typography
             className={styles.about_content_presentation}

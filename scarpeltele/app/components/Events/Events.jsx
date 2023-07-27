@@ -8,7 +8,8 @@ import { urlFor } from '../../lib/client';
 
 const Events = ({ events }) => {
   return (
-    <div data-section id="events" className={styles.events}>
+    <div id="events" className={styles.events}>
+      <div data-section id="event" className={styles.anchor}></div>
       <Container className={styles.events_wrapper}>
         <Typography
           className={styles.events_wrapper_title}

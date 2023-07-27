@@ -1,5 +1,5 @@
 import post from './post'
 import events from './events'
-import FAQ from './FAQ'
+import faq from './FAQ'
 
-export const schemaTypes = [post, FAQ, events]
+export const schemaTypes = [post, faq, events]

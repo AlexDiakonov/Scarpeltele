@@ -4,6 +4,12 @@
   background-color: $secondary-blue-light;
   position: relative;
 
+  .anchor {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+  }
+
   &_mobileImage {
     display: none;
   }

@@ -95,7 +95,7 @@
     border-bottom: 3px solid $primary-blue;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
   .navWrapper {
     &_menuContainer {
       background-color: $primary-blue;
@@ -138,7 +138,7 @@
         position: fixed;
         display: flex;
         left: 0%;
-        max-height: 0;
+        max-height: 320px;
         height: 0;
         overflow: hidden;
         width: 100vw;
@@ -150,10 +150,20 @@
         &_menu {
           margin-right: 0;
           width: 90%;
-          justify-content: space-between;
-          height: 100px;
+          padding-top: 2rem;
+          justify-content: center;
+          flex-wrap: wrap;
+          height: unset;
           margin-bottom: 30px;
+
           &_item {
+            padding: 0 2rem 0 2rem;
+            height: 6rem;
+
+            &:not(:last-child) {
+              margin-right: unset;
+            }
+
             &_link {
               &_text {
                 font-size: 1.8rem;
@@ -172,6 +182,7 @@
     }
     & > .opened {
       width: 0;
+
       &::after {
         transform: rotate(45deg);
       }
@@ -182,31 +193,34 @@
 
       & > .navWrapper_menuContainer_organizer {
         padding: 3rem 0 7.2rem;
-        max-height: 300px;
-        height: 26rem;
+        height: 40rem;
       }
     }
   }
 }
+
 @media screen and (max-width: 415px) {
   .navWrapper {
     &_menuContainer {
       &_organizer {
         overflow: auto;
         justify-content: space-between;
+
         &_menu {
           flex-direction: column;
           justify-content: space-between;
           height: 100%;
           margin-bottom: 0;
+
           &_item {
             display: flex;
             justify-content: center;
-
             width: 100%;
+
             &:not(:last-child) {
               margin-right: 0rem;
             }
+
             &_link {
               width: 100%;
               text-align: center;
@@ -219,10 +233,10 @@
         }
       }
     }
+
     & > .opened {
       & > .navWrapper_menuContainer_organizer {
         height: calc(100vh - 9.6rem);
-        // height: 100%;
         max-height: unset;
         padding-bottom: 4.8rem;
       }

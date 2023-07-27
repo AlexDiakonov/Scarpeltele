@@ -12,6 +12,8 @@ import Button from '@/app/Atoms/Button/Button';
 const WhyUs = () => {
   return (
     <div id="whyUs" className={styles.whyUs}>
+      <div className={styles.anchor} data-section id="why"></div>
+
       <Container className={styles.whyUs_wrapper}>
         <Typography
           className={styles.whyUs_wrapper_title}
@@ -94,7 +96,6 @@ const WhyUs = () => {
                 component="h6"
                 variant="h6Title"
               >
-                <div data-section id="why"></div>
                 Effortless CRM Integration
               </Typography>
               <Typography variant="body4">

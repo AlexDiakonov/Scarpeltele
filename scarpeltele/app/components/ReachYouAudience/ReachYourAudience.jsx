@@ -22,6 +22,11 @@ const ReachYourAudience = () => {
           Whether you&#39;re a solopreneur or a multi-million dollar business,
           SMS marketing will increase your customer&#39;s lifetime value,
           generate more leads, and help you grow and protect your business.
+          Don&#39;t leave money on the table. With open rates of 99% and
+          conversion rates of up to 40%, text messaging ensures your message is
+          seen and acted on. It&#39;s a personal and direct way to connect with
+          your audience that builds relationships driving loyalty and repeat
+          business.
         </Typography>
         <Button href="/#contact" link={true} variant="borderAndTransparent">
           Book a demo

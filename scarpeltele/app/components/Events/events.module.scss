@@ -3,6 +3,14 @@
 .events {
   background-color: $secondary-green-lighter;
   padding-bottom: 8.7rem;
+  position: relative;
+
+  .anchor {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+  }
+
   &_wrapper {
     &_title {
       margin-bottom: 2.4rem;
@@ -15,6 +23,7 @@
     }
   }
 }
+
 .slide {
   display: block;
   margin: 0 auto;

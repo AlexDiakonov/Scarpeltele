@@ -17,6 +17,8 @@ const Solution = () => {
   return (
     <div id="solution">
       <Container className={styles.solution}>
+        <div data-section id="sol" className={styles.anchor}></div>
+
         <Typography
           className={styles.solution_title}
           component="h2"
@@ -61,11 +63,7 @@ const Solution = () => {
           </li>
           <li className={styles.solution_list_item}>
             <TwoArrows />
-            <div
-              data-section
-              id="sol"
-              className={styles.solution_list_item_text}
-            >
+            <div className={styles.solution_list_item_text}>
               <Typography component="h6" variant="h6Title">
                 Message cascade
               </Typography>

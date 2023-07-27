@@ -14,6 +14,7 @@ const Blog = ({ posts }) => {
   return (
     <div id="blog">
       <Container className={styles.blog}>
+        <div data-section id="blo" className={styles.anchor}></div>
         <div className={styles.blog_titleWrapper}>
           <Typography component="h2" variant="h2Title">
             Latest Insights
@@ -37,7 +38,6 @@ const Blog = ({ posts }) => {
                 target="_blank"
               >
                 <div className={styles[`blog_grid_item${idx}_imageWrapper`]}>
-                  <div data-section id="blo"></div>
                   <img
                     className={styles[`blog_grid_item${idx}_imageWrapper_img`]}
                     src={urlFor(posts[0].mainImage).src}

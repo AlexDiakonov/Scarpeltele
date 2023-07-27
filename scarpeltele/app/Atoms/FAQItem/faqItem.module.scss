@@ -6,9 +6,7 @@
   border: 1px solid $black10;
   transition: 100ms linear all;
   border-radius: 8px;
-  // .active {
-  //   color: $secondary-blue;
-  // }
+  cursor: pointer;
   &:hover {
     border: 1px solid $secondary-blue;
 

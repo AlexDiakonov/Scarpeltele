@@ -2,11 +2,29 @@
 
 .faq {
   background-color: $secondary-green-lighter;
+  position: relative;
+  .anchor {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+  }
+
   &_wrapper {
     &_titleWrap {
       display: flex;
       justify-content: space-between;
       margin-bottom: 4.8rem;
+      position: relative;
+
+      &_title {
+        margin-bottom: 2.4rem;
+      }
+
+      &_icon {
+        position: absolute;
+        right: 22%;
+        top: -75%;
+      }
     }
 
     &_faqBlock {
@@ -24,9 +42,17 @@
     }
   }
 }
+
 @media screen and (max-width: 1333px) {
   .faq {
     &_wrapper {
+      &_titleWrap {
+        &_icon {
+          position: absolute;
+          right: 10%;
+          top: -75%;
+        }
+      }
       &_faqBlock {
         flex-direction: column;
         gap: unset;
@@ -43,9 +69,43 @@
   }
 }
 
+@media screen and (max-width: 1333px) {
+  .faq {
+    &_wrapper {
+      &_titleWrap {
+        &_title {
+          max-width: 46rem;
+        }
+        &_icon {
+          top: -13%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .faq {
+    &_wrapper {
+      &_titleWrap {
+        &_icon {
+          max-width: 6.7rem;
+          max-height: 6.24rem;
+          top: 35%;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 415px) {
   .faq {
     &_wrapper {
+      &_titleWrap {
+        &_icon {
+          top: 30%;
+        }
+      }
       &_faqBlock {
         &_faqItem {
           &:not(:last-child) {
@@ -55,4 +115,9 @@
       }
     }
   }
+}
+
+.faqW {
+  background-color: #fff;
+  padding-top: 8rem;
 }

@@ -9,7 +9,6 @@ import Typography from '../../Atoms/Typography/Typography';
 import { useEffect, useRef, useState } from 'react';
 import useClickOutside from '../../utils/useClickOutside';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 const NavBar = () => {
   const pathName = usePathname();
@@ -153,7 +152,7 @@ const NavBar = () => {
                   <a
                     className={classNames(
                       {
-                        [styles.active]: activeSection === 'about',
+                        [styles.active]: activeSection === 'abou',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
@@ -179,7 +178,7 @@ const NavBar = () => {
                   <a
                     className={classNames(
                       {
-                        [styles.active]: activeSection === 'events',
+                        [styles.active]: activeSection === 'event',
                       },
                       [
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
@@ -229,7 +228,7 @@ const NavBar = () => {
                     styles.navWrapper_menuContainer_organizer_menu_item
                   }
                 >
-                  <a
+                  <Link
                     className={classNames(
                       {
                         [styles.active]:
@@ -249,7 +248,34 @@ const NavBar = () => {
                     >
                       Blog
                     </Typography>
-                  </a>
+                  </Link>
+                </li>
+                <li
+                  className={
+                    styles.navWrapper_menuContainer_organizer_menu_item
+                  }
+                >
+                  <Link
+                    className={classNames(
+                      {
+                        [styles.active]:
+                          pathName === '/faq' || activeSection === 'fa',
+                      },
+                      [
+                        styles.navWrapper_menuContainer_organizer_menu_item_link,
+                      ],
+                    )}
+                    href="/faq"
+                  >
+                    <Typography
+                      className={
+                        styles.navWrapper_menuContainer_organizer_menu_item_link_text
+                      }
+                      variant="body2"
+                    >
+                      FAQ
+                    </Typography>
+                  </Link>
                 </li>
               </ul>
               <Button

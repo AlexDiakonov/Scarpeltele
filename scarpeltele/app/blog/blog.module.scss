@@ -157,9 +157,6 @@
       &_bg {
         display: none;
       }
-
-      &_title {
-      }
     }
     .NoMobile {
       display: none;
@@ -182,12 +179,6 @@
           }
         }
       }
-
-      &_title {
-      }
-
-      &_description {
-      }
     }
   }
 
@@ -195,7 +186,7 @@
     &_postWrapper {
       flex-direction: column;
       gap: unset;
-      margin-bottom: 0;
+      margin-bottom: 4.8rem;
       &_item {
         width: 100%;
         display: flex;

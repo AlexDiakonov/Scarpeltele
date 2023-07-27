@@ -1,7 +1,13 @@
 .solution {
-  // padding: 10rem 0;
   display: flex;
   justify-content: center;
+  position: relative;
+
+  .anchor {
+    position: absolute;
+    top: 40%;
+    right: 50%;
+  }
 
   &_title {
     width: 38.4rem;

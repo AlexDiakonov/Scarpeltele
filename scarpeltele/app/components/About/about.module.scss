@@ -1,12 +1,20 @@
 .about {
   background-image: url('../../assets/about/map.png');
   background-repeat: no-repeat;
-  box-sizing: 50%;
   background-size: 66.3rem 43rem;
   background-position: 100% 10rem;
+  position: relative;
+
+  .anchor {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+  }
+
   &_imgWrapper {
     display: none;
   }
+
   &_content {
     max-width: 47.8rem;
     display: flex;
@@ -56,14 +64,17 @@
   .about {
     background-image: unset;
     padding-bottom: 0rem;
+
     &_imgWrapper {
       display: block;
       max-height: 43rem;
+
       &_img {
         object-fit: contain;
         transform: translate(0, -25%);
       }
     }
+
     &_content {
       max-width: 100%;
     }
@@ -72,8 +83,10 @@
       max-width: 100%;
       justify-content: space-between;
       gap: 1.5rem;
+
       &_item {
         flex: 2 1 auto;
+
         &_imageWrapper {
           width: 100%;
         }

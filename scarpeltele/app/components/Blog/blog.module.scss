@@ -1,9 +1,18 @@
 @import '../../styles/variables';
 
 .blog {
+  position: relative;
+
+  .anchor {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+  }
+
   &_mobileLink {
     display: none;
   }
+
   &_titleWrapper {
     display: flex;
     width: 100%;
@@ -22,9 +31,11 @@
       border: 1px solid $black10;
       border-radius: 8px;
       overflow: hidden;
+
       &_imageWrapper {
         height: 31rem;
         margin-bottom: 1.2rem;
+
         &_img {
           object-fit: cover;
           max-width: 100%;
@@ -40,15 +51,18 @@
       border: 1px solid $black10;
       border-radius: 8px;
       overflow: hidden;
+
       &_imageWrapper {
         width: 29.4rem;
         height: 100%;
+
         &_img {
           object-fit: cover;
           width: 100%;
           height: 100%;
         }
       }
+
       &_content {
         width: 29.4rem;
       }
@@ -58,6 +72,7 @@
 
 .content {
   padding: 1.2rem;
+
   &_date {
     color: $primary-blue;
     margin-bottom: 1rem;
@@ -128,6 +143,8 @@
     }
 
     &_grid {
+      margin-bottom: 4.8rem;
+
       display: flex;
       flex-direction: column;
 
@@ -147,9 +164,11 @@
       &_item2 {
         height: unset;
         flex-direction: column;
+
         &_imageWrapper {
           height: 19.8rem;
           width: 100%;
+
           &_img {
             height: 100%;
             width: 100%;
@@ -159,7 +178,6 @@
           width: unset;
         }
       }
-      margin-bottom: 4.8rem;
     }
     &_mobileLink {
       display: inline-block;

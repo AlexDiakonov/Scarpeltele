@@ -5,7 +5,6 @@ import Container from '../../Atoms/Container/Container';
 import Typography from '../../Atoms/Typography/Typography';
 import Input from '../../Atoms/Input/Input';
 import FormIllustration from '../../assets/illustrations/FormIllustration';
-import Clip from '../../assets/icons/Clip';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import styles from './contactUs.module.scss';
@@ -76,6 +75,7 @@ const ContactUs = () => {
 
   return (
     <div id="contact" className={styles.contactUs}>
+      <div data-section id="contac" className={styles.anchor}></div>
       <MobileS className={styles.contactUs_mobileImage} />
 
       <ToastContainer
@@ -151,7 +151,7 @@ const ContactUs = () => {
               label={'Phone (optional)'}
             ></Input>
           </div>
-          <div data-section id="contac"></div>
+
           <Input
             inputHandler={inputHandler}
             label={'Message'}

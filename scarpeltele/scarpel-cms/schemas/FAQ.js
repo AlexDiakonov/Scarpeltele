@@ -1,5 +1,7 @@
+import {defineField, defineType} from 'sanity'
+
 export default defineType({
-  name: 'FAQ',
+  name: 'faq',
   title: 'FAQ',
   type: 'document',
   fields: [
@@ -17,8 +19,8 @@ export default defineType({
 
   preview: {
     select: {
-      title: 'FAQ',
-      faq: 'FAQ.title',
+      title: 'title',
+      event: 'faq.title',
     },
     prepare(selection) {
       return {...selection}
