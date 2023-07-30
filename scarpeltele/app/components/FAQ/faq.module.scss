@@ -28,42 +28,17 @@
     }
 
     &_faqBlock {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 2.4rem;
       justify-content: space-between;
 
       &_faqItem {
-        // margin-right: 2.4rem;
-        width: 58.8rem;
-        max-width: 49%;
+        width: 100%;
+        height: 100%;
+        align-items: stretch;
         align-self: flex-start;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1333px) {
-  .faq {
-    &_wrapper {
-      &_titleWrap {
-        &_icon {
-          position: absolute;
-          right: 10%;
-          top: -75%;
-        }
-      }
-      &_faqBlock {
-        flex-direction: column;
-        gap: unset;
-
-        &_faqItem {
-          width: 100%;
-          max-width: unset;
-          &:not(:last-child) {
-            margin-bottom: 2.4rem;
-          }
-        }
+        padding-right: 2rem;
       }
     }
   }
@@ -77,7 +52,38 @@
           max-width: 46rem;
         }
         &_icon {
+          position: absolute;
+          right: 10%;
+          top: -75%;
           top: -13%;
+        }
+      }
+      &_faqBlock {
+        &_faqItem {
+          width: 100%;
+          max-width: unset;
+          &:not(:last-child) {
+            margin-bottom: 2.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .faq {
+    &_wrapper {
+      &_faqBlock {
+        display: flex;
+        flex-direction: column;
+        gap: unset;
+
+        &_faqItem {
+          width: 100%;
+          max-width: unset;
+          &:not(:last-child) {
+            margin-bottom: 2.4rem;
+          }
         }
       }
     }

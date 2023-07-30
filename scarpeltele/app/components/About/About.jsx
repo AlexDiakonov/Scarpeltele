@@ -22,7 +22,7 @@ const About = () => {
             className={styles.about_content_description}
             variant="body1"
           >
-            OWe are here to help you deliver… Our team is based all over the
+            We are here to help you deliver… Our team is based all over the
             world. We are working remotely but we always stay connected. We've
             been delivering A2P Messaging for over 10 years and we know all
             about seamless SMS delivery that gets rapid results. Together we can

@@ -32,7 +32,11 @@ const BlogItem = ({ item, className, imageWrapper }) => {
           </Typography>
           <Typography variant="body4">{item.authorFullName}</Typography>
         </div>
-        <Typography className={styles.post_content_title} variant="h4Title">
+        <Typography
+          component="h4"
+          className={styles.post_content_title}
+          variant="h4Title"
+        >
           {item.title} <ArrowTopRight />
         </Typography>
         <Typography variant="body2" className={styles.post_content_description}>

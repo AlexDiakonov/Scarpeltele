@@ -22,8 +22,8 @@ const Careers = () => {
           className={styles.careerSection_wrapper_description}
           variant="body1"
         >
-          We’re seeking energetic and dedicated individuals to become part of
-          our Scarpel Telecom team – let's grow and innovate together!
+          We&#39;re seeking energetic and dedicated individuals to become part
+          of our Scarpel Telecom team – let's grow and innovate together!
         </Typography>
         <Button
           className={styles.careerSection_wrapper_navButton}

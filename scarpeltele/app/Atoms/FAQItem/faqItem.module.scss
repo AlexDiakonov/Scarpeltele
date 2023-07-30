@@ -6,6 +6,9 @@
   border: 1px solid $black10;
   transition: 100ms linear all;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
   &:hover {
     border: 1px solid $secondary-blue;
@@ -32,6 +35,9 @@
     justify-content: space-between;
     align-items: center;
 
+    & > span {
+      max-width: 92%;
+    }
     &_btn {
       width: 2.8rem;
       background-color: transparent;

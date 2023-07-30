@@ -1,0 +1,168 @@
+@import '../styles/variables';
+.careers {
+  &_wrapper {
+    background-color: $secondary-blue;
+    padding-top: 17.5rem;
+    position: relative;
+
+    .pc {
+      position: absolute;
+      right: 25%;
+      bottom: -22%;
+      max-width: 31.6rem;
+      height: 46.6rem;
+    }
+
+    .mobile {
+      display: none;
+    }
+    &_container {
+      padding-bottom: 6.4rem;
+      &_title {
+        max-width: 46.6rem;
+        color: $basic-white;
+      }
+    }
+  }
+}
+.positionsContainer {
+  &_title {
+    margin-bottom: 3.6rem;
+  }
+
+  &_positions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.careerItem {
+  background-color: $secondary-blue-light;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+
+  &_imgWrapper {
+    width: 10rem;
+    height: 10rem;
+    margin-right: 1.2rem;
+
+    &_img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &_content {
+    &_title {
+      margin-bottom: 1.2rem;
+    }
+
+    &_location {
+      display: flex;
+      align-items: center;
+      &_icon {
+        margin-right: 0.4rem;
+        & > path {
+          stroke: $primary-blue;
+        }
+        & > circle {
+          stroke: $primary-blue;
+        }
+      }
+    }
+  }
+
+  &_btn {
+    width: 2.8rem;
+    background-color: transparent;
+    height: 2.8rem;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    margin-left: auto;
+
+    &:after {
+      display: block;
+      position: absolute;
+      left: 0%;
+      content: '';
+      width: 2.8rem;
+      height: 2px;
+      background-color: $primary-blue;
+      transform: rotate(90deg);
+      transition: transform 200ms linear;
+    }
+
+    &:before {
+      display: block;
+      position: absolute;
+      left: 0%;
+      content: '';
+      width: 2.8rem;
+      height: 2px;
+      background-color: $primary-blue;
+      transition: transform 200ms linear;
+    }
+  }
+}
+.values {
+  background-color: $secondary-green-lighter;
+  &_imgWrapper {
+    margin: 0 auto;
+    max-height: 59.2rem;
+    max-width: 144.4rem;
+    &_img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.benefits {
+  &_title {
+    margin-bottom: 4.8rem;
+  }
+
+  &_list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4.8rem;
+  }
+}
+
+.promo {
+  background-color: $primary-blue;
+  &_container {
+    display: flex;
+    justify-content: space-between;
+
+    &_title {
+      max-width: 55%;
+      color: $basic-white;
+    }
+
+    &_list {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      &_item {
+        &_title {
+          color: $secondary-green-light;
+        }
+        &_text {
+          color: $basic-white;
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,6 @@ import ArrowTopRight from '../../assets/icons/ArrowTopRight';
 import styles from './blog.module.scss';
 import classNames from 'classnames';
 import { urlFor } from '../../lib/client';
-
 import { format } from 'date-fns';
 import Link from 'next/link';
 
@@ -35,12 +34,11 @@ const Blog = ({ posts }) => {
                 href={`/blog/${item.slug.current}`}
                 className={styles[`blog_grid_item${idx}`]}
                 key={idx}
-                target="_blank"
               >
                 <div className={styles[`blog_grid_item${idx}_imageWrapper`]}>
                   <img
                     className={styles[`blog_grid_item${idx}_imageWrapper_img`]}
-                    src={urlFor(posts[0].mainImage).src}
+                    src={urlFor(item.mainImage).src}
                     alt="blog_image"
                   />
                 </div>

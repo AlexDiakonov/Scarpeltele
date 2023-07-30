@@ -31,7 +31,11 @@ const Solution = () => {
           <li className={styles.solution_list_item}>
             <Sms />
             <div className={styles.solution_list_item_text}>
-              <Typography component="h6" variant="h6Title">
+              <Typography
+                className={styles.solution_list_item_text_title}
+                component="h6"
+                variant="h6Title"
+              >
                 SMS Info
               </Typography>
               <Typography variant="body4">
@@ -42,7 +46,11 @@ const Solution = () => {
           <li className={styles.solution_list_item}>
             <Lucky />
             <div className={styles.solution_list_item_text}>
-              <Typography component="h6" variant="h6Title">
+              <Typography
+                className={styles.solution_list_item_text_title}
+                component="h6"
+                variant="h6Title"
+              >
                 Short numbers
               </Typography>
               <Typography variant="body4">
@@ -53,7 +61,11 @@ const Solution = () => {
           <li className={styles.solution_list_item}>
             <Push />
             <div className={styles.solution_list_item_text}>
-              <Typography component="h6" variant="h6Title">
+              <Typography
+                className={styles.solution_list_item_text_title}
+                component="h6"
+                variant="h6Title"
+              >
                 PUSH
               </Typography>
               <Typography variant="body4">
@@ -64,7 +76,11 @@ const Solution = () => {
           <li className={styles.solution_list_item}>
             <TwoArrows />
             <div className={styles.solution_list_item_text}>
-              <Typography component="h6" variant="h6Title">
+              <Typography
+                className={styles.solution_list_item_text_title}
+                component="h6"
+                variant="h6Title"
+              >
                 Message cascade
               </Typography>
               <Typography variant="body4">
@@ -76,7 +92,11 @@ const Solution = () => {
           <li className={styles.solution_list_item}>
             <QandA />
             <div className={styles.solution_list_item_text}>
-              <Typography component="h6" variant="h6Title">
+              <Typography
+                className={styles.solution_list_item_text_title}
+                component="h6"
+                variant="h6Title"
+              >
                 Messengers
               </Typography>
               <Typography variant="body4">
@@ -88,7 +108,11 @@ const Solution = () => {
           <li className={styles.solution_list_item}>
             <ThreeStars />
             <div className={styles.solution_list_item_text}>
-              <Typography component="h6" variant="h6Title">
+              <Typography
+                className={styles.solution_list_item_text_title}
+                component="h6"
+                variant="h6Title"
+              >
                 Flashing call
               </Typography>
               <Typography variant="body4">
@@ -100,7 +124,11 @@ const Solution = () => {
           <li className={styles.solution_list_item}>
             <Social />
             <div className={styles.solution_list_item_text}>
-              <Typography component="h6" variant="h6Title">
+              <Typography
+                className={styles.solution_list_item_text_title}
+                component="h6"
+                variant="h6Title"
+              >
                 Notifications in SM
               </Typography>
               <Typography variant="body4">
@@ -111,7 +139,11 @@ const Solution = () => {
           <li className={styles.solution_list_item}>
             <Check />
             <div className={styles.solution_list_item_text}>
-              <Typography component="h6" variant="h6Title">
+              <Typography
+                className={styles.solution_list_item_text_title}
+                component="h6"
+                variant="h6Title"
+              >
                 HLR
               </Typography>
               <Typography variant="body4">

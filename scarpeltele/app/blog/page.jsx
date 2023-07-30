@@ -8,12 +8,6 @@ import BlogPostSection from './BlogPostsSection';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-// const getPost = async () => {
-//   const query = '*[_type == "post"] | order(_createdAt desc) [0]';
-//   const post = await client.fetch(query);
-//   return post;
-// };
-
 const Blog = () => {
   const [post, setPost] = useState({});
 

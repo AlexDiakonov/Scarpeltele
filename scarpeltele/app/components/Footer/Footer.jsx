@@ -8,6 +8,7 @@ import MailIcon from '../../assets/icons/MailIcon';
 import Phone from '../../assets/icons/Phone';
 import LinkedIn from '../../assets/icons/LinkedIn';
 import classNames from 'classnames';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -30,14 +31,14 @@ const Footer = () => {
                 </a>
               </li>
               <li className={styles.footerContainer_nav_rightSide_item}>
-                <a href={'#'}>
+                <Link href={'/careers'}>
                   <Typography variant="body3">Careers</Typography>
-                </a>
+                </Link>
               </li>
               <li className={styles.footerContainer_nav_rightSide_item}>
-                <a href={'#FAQ'}>
+                <Link href={'/faq'}>
                   <Typography variant="body3">FAQ</Typography>
-                </a>
+                </Link>
               </li>
               <li className={styles.footerContainer_nav_rightSide_item}>
                 <alert href={'#'}>
@@ -149,14 +150,14 @@ const Footer = () => {
               </a>
             </li>
             <li className={styles.footerContainer_nav_rightSide_item}>
-              <a href={'#'}>
+              <Link href={'/careers'}>
                 <Typography variant="body3">Careers</Typography>
-              </a>
+              </Link>
             </li>
             <li className={styles.footerContainer_nav_rightSide_item}>
-              <a href={'#'}>
+              <Link href={'/faq'}>
                 <Typography variant="body3">FAQ</Typography>
-              </a>
+              </Link>
             </li>
             <li className={styles.footerContainer_nav_rightSide_item}>
               <a href={'#'}>
