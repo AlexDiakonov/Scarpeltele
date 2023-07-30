@@ -1,13 +1,11 @@
 import styles from './careers.module.scss';
 import Container from '../Atoms/Container/Container';
 import Typography from '../Atoms/Typography/Typography';
-import OpportunitiesImage from '../assets/illustrations/OpprotunitiesImage';
 import OpportunitiesMobile from '../assets/illustrations/OpportunitiesMobile';
 import CareerItem from './CareerItem';
 import search from '../assets/search.png';
 
 const Opportunities = ({ careers }) => {
-  console.log(search);
   return (
     <div className={styles.careers}>
       <div className={styles.careers_wrapper}>
