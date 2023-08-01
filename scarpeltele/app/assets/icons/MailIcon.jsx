@@ -1,8 +1,9 @@
 import React from 'react';
 
-const MailIcon = () => {
+const MailIcon = ({ className }) => {
   return (
     <svg
+      className={className}
       width="20"
       height="16"
       viewBox="0 0 20 16"

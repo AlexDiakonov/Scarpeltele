@@ -15,7 +15,7 @@ const Typography = ({
       [styles.h3Title]: variant === 'h3Title',
       [styles.h3Light]: variant === 'h3Light',
       [styles.h4title]: variant === 'h4Title',
-      [styles.h5title]: variant === 'h5title',
+      [styles.h5Title]: variant === 'h5Title',
       [styles.h6title]: variant === 'h6Title',
       [styles.body1]: variant === 'body1',
       [styles.body2]: variant === 'body2',

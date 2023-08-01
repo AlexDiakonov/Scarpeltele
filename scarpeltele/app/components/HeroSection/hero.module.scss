@@ -1,13 +1,20 @@
 @import '../../styles/variables';
-
+.parallax {
+  & > img {
+    width: 48rem;
+  }
+}
 .heroSection {
   background-color: $primary-green;
-  position: relative;
   padding-top: 9.6rem;
   overflow: hidden;
+  background-image: url('../../assets/heroRight.png');
+  background-size: 92rem;
+  background-repeat: no-repeat;
+  background-position: 150% 145%;
+  background-attachment: fixed;
 
   &_wrapper {
-    position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;

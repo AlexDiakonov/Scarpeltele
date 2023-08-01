@@ -25,7 +25,7 @@ const Careers = () => {
 
   return (
     <Layout>
-      <Opportunities careers={careers} />
+      <Opportunities careers={[]} />
       <Values />
       <Benefits />
       <PromoSection />

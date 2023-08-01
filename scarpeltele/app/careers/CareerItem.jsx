@@ -4,9 +4,9 @@ import LocationIcon from '../assets/icons/Location';
 import styles from './careers.module.scss';
 import { urlFor } from '../lib/client';
 
-const CareerItem = ({ career }) => {
+const CareerItem = ({ career, onClick }) => {
   return (
-    <div className={styles.careerItem}>
+    <div onClick={onClick} className={styles.careerItem}>
       <div className={styles.careerItem_imgWrapper}>
         <img
           className={styles.careerItem_imgWrapper_img}

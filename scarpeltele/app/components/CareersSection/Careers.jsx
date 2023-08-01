@@ -27,7 +27,7 @@ const Careers = () => {
         </Typography>
         <Button
           className={styles.careerSection_wrapper_navButton}
-          href="#"
+          href="/careers"
           link={true}
         >
           Go to careers

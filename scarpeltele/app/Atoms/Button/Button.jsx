@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import styles from './button.module.scss';
+import Link from 'next/link';
 
 const Button = ({
   children,
@@ -21,9 +22,9 @@ const Button = ({
   );
 
   return link ? (
-    <a href={href} target={target} className={buttonClasses}>
+    <Link href={href} target={target} className={buttonClasses}>
       {children}
-    </a>
+    </Link>
   ) : (
     <button type={type} className={buttonClasses}>
       {children}

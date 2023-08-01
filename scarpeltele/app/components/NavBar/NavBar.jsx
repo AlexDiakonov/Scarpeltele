@@ -54,9 +54,9 @@ const NavBar = () => {
     <header className={styles.headerStyler}>
       <Container className={styles.headerStyler_navWrap}>
         <nav className={styles.navWrapper}>
-          <a className={styles.navWrapper_logo} href="/">
+          <Link className={styles.navWrapper_logo} href="/">
             <MainLogo />
-          </a>
+          </Link>
           <div
             onClick={menuToggle}
             ref={ref}

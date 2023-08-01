@@ -17,25 +17,25 @@ const Benefits = () => {
         Benefits to work with us
       </Typography>
       <ul className={styles.benefits_list}>
-        <li>
+        <li className={styles.benefits_list_item}>
           <ThrivingBenefit />
           <Typography component="h6" variant="h6Title">
             Thriving online corporate culture
           </Typography>
         </li>
-        <li>
+        <li className={styles.benefits_list_item}>
           <Salary />
           <Typography component="h6" variant="h6Title">
             Competitive salary
           </Typography>
         </li>
-        <li>
+        <li className={styles.benefits_list_item}>
           <Bonuses />
           <Typography component="h6" variant="h6Title">
             Quarterly bonuses
           </Typography>
         </li>
-        <li>
+        <li className={styles.benefits_list_item}>
           <Trainings />
           <Typography component="h6" variant="h6Title">
             Regular trainings

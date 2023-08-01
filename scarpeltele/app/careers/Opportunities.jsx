@@ -3,9 +3,21 @@ import Container from '../Atoms/Container/Container';
 import Typography from '../Atoms/Typography/Typography';
 import OpportunitiesMobile from '../assets/illustrations/OpportunitiesMobile';
 import CareerItem from './CareerItem';
-import search from '../assets/search.png';
+import { useState } from 'react';
+import CareerModal from './CareerModal';
+import NoPosition from './NoPosition';
 
 const Opportunities = ({ careers }) => {
+  const [modalItem, setItem] = useState({});
+
+  const modalItemHandler = (item) => {
+    setItem(item);
+  };
+
+  const closeModal = () => {
+    setItem({});
+  };
+
   return (
     <div className={styles.careers}>
       <div className={styles.careers_wrapper}>
@@ -18,23 +30,34 @@ const Opportunities = ({ careers }) => {
             Discover career opportunities
           </Typography>
         </Container>
-        <div className={styles.pc}>
-          <img src={search.src} alt="search_img" />
-        </div>
         <OpportunitiesMobile className={styles.mobile} />
       </div>
       <Container className={styles.positionsContainer}>
-        <Typography
-          className={styles.positionsContainer_title}
-          component="h4"
-          variant="h4Title"
-        >
-          Open positions
-        </Typography>
+        {careers.length > 0 ? (
+          <Typography
+            className={styles.positionsContainer_title}
+            component="h4"
+            variant="h4Title"
+          >
+            Open positions
+          </Typography>
+        ) : (
+          <NoPosition />
+        )}
+
+        {modalItem?.title && (
+          <CareerModal closeModal={closeModal} modalItem={modalItem} />
+        )}
         <div className={styles.positionsContainer_positions}>
-          {careers.length > 1 &&
+          {careers.length > 0 &&
             careers.map((item) => {
-              return <CareerItem key={item._id} career={item} />;
+              return (
+                <CareerItem
+                  onClick={() => modalItemHandler(item)}
+                  key={item._id}
+                  career={item}
+                />
+              );
             })}
         </div>
       </Container>

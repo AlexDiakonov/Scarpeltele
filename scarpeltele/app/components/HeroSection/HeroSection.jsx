@@ -1,3 +1,5 @@
+'use client';
+
 import Button from '../../Atoms/Button/Button';
 import Container from '../../Atoms/Container/Container';
 import Typography from '../../Atoms/Typography/Typography';
@@ -5,17 +7,22 @@ import MessageIcon from '../../assets/icons/MessageIcon';
 import HeroSms from '../../assets/illustrations/HeroSms';
 import SmsFireWall from '../../assets/illustrations/SmsFireWall';
 import TwoFactorAuth from '../../assets/illustrations/TwoFactorAuth';
-import LeftHeroSectionImage from '../../assets/illustrations/LeftHeroSectionImage';
-import RightHeroSectionImage from '../../assets/illustrations/RightHeroSectionImage';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import heroLeft from '../../assets/heroLeft.png';
 import styles from './hero.module.scss';
+import { useRef } from 'react';
+import Image from 'next/image';
 
 const HeroSection = () => {
+  const ref = useRef();
+
   return (
     <div className={styles.heroSection}>
+      {/* <div className={styles.parallax}>
+        <Image alt="parallax_img" src={heroLeft} />
+      </div> */}
       <div data-section className={styles.navAnchor} id="hero"></div>
 
-      <LeftHeroSectionImage className={styles.heroSection_leftImage} />
-      <RightHeroSectionImage className={styles.heroSection_rightImage} />
       <Container className={styles.heroSection_wrapper}>
         <Typography
           component="h1"
@@ -41,7 +48,7 @@ const HeroSection = () => {
               <Typography
                 className={styles.heroSection_wrapper_benefitList_item_title}
                 component="h5"
-                variant="h5title"
+                variant="h5Title"
               >
                 A2P Messaging
               </Typography>
@@ -60,7 +67,7 @@ const HeroSection = () => {
               <Typography
                 className={styles.heroSection_wrapper_benefitList_item_title}
                 component="h5"
-                variant="h5title"
+                variant="h5Title"
               >
                 SMS Firewall
               </Typography>
@@ -79,7 +86,7 @@ const HeroSection = () => {
               <Typography
                 className={styles.heroSection_wrapper_benefitList_item_title}
                 component="h5"
-                variant="h5title"
+                variant="h5Title"
               >
                 Two-Factor Authentication
               </Typography>
@@ -92,7 +99,6 @@ const HeroSection = () => {
           </li>
         </ul>
       </Container>
-      <RightHeroSectionImage className={styles.heroSection_rightImage} />
     </div>
   );
 };
