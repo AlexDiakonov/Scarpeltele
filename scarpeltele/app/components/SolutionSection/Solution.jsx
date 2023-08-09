@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Container from '../../Atoms/Container/Container';
 import Typography from '../../Atoms/Typography/Typography';
 import PaperPlane from '../../assets/illustrations/PaperPlane';
@@ -12,20 +12,61 @@ import TwoArrows from '../../assets/illustrations/TwoArrows';
 import ThreeStars from '../../assets/illustrations/ThreeStars';
 import Check from '../../assets/illustrations/Check';
 import styles from './solution.module.scss';
+import plane from '../../assets/plane.gif';
+import useAnimOnScroll from '@/app/utils/useAnimOnScroll';
 
 const Solution = () => {
+  const [currentPosition, setPosition] = useState({});
+  const [top, setTop] = useState(0);
+  const ref = useRef(null);
+
+  const scrollHandler = (setter) => {
+    if (ref.current) {
+      setter(ref?.current.getBoundingClientRect());
+    }
+  };
+
+  useEffect(() => {
+    if (ref.current) {
+      setTop(
+        Math.abs(100 - (currentPosition.y / currentPosition.height) * 100) * 1,
+      );
+    }
+  }, [ref, setTop, currentPosition]);
+
+  useEffect(() => {
+    if (ref.current) {
+      window.addEventListener('scroll', () => scrollHandler(setPosition), true);
+      return () => {
+        window.removeEventListener(
+          'scroll',
+          () => scrollHandler(setPosition),
+          true,
+        );
+      };
+    }
+  }, []);
+
   return (
     <div id="solution">
-      <Container className={styles.solution}>
+      <Container ref={ref} className={styles.solution}>
         <div data-section id="sol" className={styles.anchor}></div>
-
+        <div className={styles.parallax}>
+          <PaperPlane
+            rotate={top / 4}
+            translateX={top / 4}
+            translateY={0}
+            translateXMultiplayer={1.2}
+            translateYMultiplayer={0.1}
+            className={styles.parallax_icon}
+          />
+        </div>
         <Typography
           className={styles.solution_title}
           component="h2"
           variant="h2Title"
         >
           Aim the solution you need
-          <PaperPlane className={styles.solution_title_icon} />
         </Typography>
         <ul className={styles.solution_list}>
           <li className={styles.solution_list_item}>

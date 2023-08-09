@@ -1,6 +1,19 @@
-const PaperPlane = ({ className }) => {
+const PaperPlane = ({
+  className,
+  rotateMultiplayer = 1,
+  translateX = 0,
+  translateY = 0,
+  translateXMultiplayer = 1,
+  translateYMultiplayer = 1,
+  rotate,
+}) => {
   return (
     <svg
+      style={{
+        transform: `translate(${translateX * translateXMultiplayer}%, ${
+          translateY * translateYMultiplayer
+        }%) rotate(${rotate * rotateMultiplayer}deg)`,
+      }}
       className={className}
       width="328"
       height="261"

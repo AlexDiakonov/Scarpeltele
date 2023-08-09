@@ -1,5 +1,5 @@
 'use client';
-
+import useAnimOnScroll from '@/app/utils/useAnimOnScroll';
 import Button from '../../Atoms/Button/Button';
 import Container from '../../Atoms/Container/Container';
 import Typography from '../../Atoms/Typography/Typography';
@@ -7,20 +7,31 @@ import MessageIcon from '../../assets/icons/MessageIcon';
 import HeroSms from '../../assets/illustrations/HeroSms';
 import SmsFireWall from '../../assets/illustrations/SmsFireWall';
 import TwoFactorAuth from '../../assets/illustrations/TwoFactorAuth';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import heroLeft from '../../assets/heroLeft.png';
 import styles from './hero.module.scss';
-import { useRef } from 'react';
-import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 const HeroSection = () => {
-  const ref = useRef();
+  const [currentPosition, setPosition] = useState({});
+  const [top, setTop] = useState(0);
+  const ref = useRef(null);
+
+  useAnimOnScroll(ref, setTop, setPosition, currentPosition, 1.2);
 
   return (
-    <div className={styles.heroSection}>
-      {/* <div className={styles.parallax}>
-        <Image alt="parallax_img" src={heroLeft} />
-      </div> */}
+    <div id="home" ref={ref} className={styles.heroSection}>
+      <div
+        style={{
+          transform: `translate(${0}%, ${top / 1.4}%) rotate(${top * 1.2}deg)`,
+        }}
+        className={styles.parallax}
+      ></div>
+      <div
+        style={{
+          transform: `translate(${0}%, ${top / 1.4}%) rotate(${top * 1.2}deg)`,
+        }}
+        className={styles.parallax2}
+      ></div>
+
       <div data-section className={styles.navAnchor} id="hero"></div>
 
       <Container className={styles.heroSection_wrapper}>

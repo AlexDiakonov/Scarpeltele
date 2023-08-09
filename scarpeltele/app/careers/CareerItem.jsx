@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import Typography from '../Atoms/Typography/Typography';
 import LocationIcon from '../assets/icons/Location';

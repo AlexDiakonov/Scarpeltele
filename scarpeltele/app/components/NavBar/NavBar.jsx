@@ -80,7 +80,7 @@ const NavBar = () => {
                         styles.navWrapper_menuContainer_organizer_menu_item_link,
                       ],
                     )}
-                    href="/"
+                    href="/#home"
                   >
                     <Typography
                       className={

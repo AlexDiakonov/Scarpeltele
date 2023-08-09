@@ -8,6 +8,7 @@ import { urlFor } from '../../lib/client';
 import styles from './blogItem.module.scss';
 import classNames from 'classnames';
 import Link from 'next/link';
+/* eslint-disable @next/next/no-img-element */
 
 const BlogItem = ({ item, className, imageWrapper }) => {
   return (

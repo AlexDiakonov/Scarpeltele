@@ -4,15 +4,21 @@ import Typography from '../../Atoms/Typography/Typography';
 import Button from '../../Atoms/Button/Button';
 import styles from './faq.module.scss';
 import FAQItem from '../../Atoms/FAQItem/FAQItem';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { client } from '@/app/lib/client';
 import { usePathname } from 'next/navigation';
-import Faq from '@/app/assets/illustrations/Faq';
+
 import classNames from 'classnames';
+import useAnimOnScroll from '@/app/utils/useAnimOnScroll';
 
 const FAQ = () => {
   const [faq, setFaq] = useState([]);
   const pathName = usePathname();
+  const [currentPosition, setPosition] = useState({});
+  const [top, setTop] = useState(0);
+  const ref = useRef(null);
+
+  useAnimOnScroll(ref, setTop, setPosition, currentPosition, 1.2);
 
   useEffect(() => {
     if (faq.length < 1) {
@@ -27,8 +33,18 @@ const FAQ = () => {
 
   return (
     <div
+      ref={ref}
       className={classNames(styles.faq, { [styles.faqW]: pathName === '/faq' })}
     >
+      <div
+        style={{
+          transform: `translate(${0}%, ${top * 2.4}%) rotate(${top / 3}deg)`,
+        }}
+        className={classNames(styles.parallax, {
+          [styles.hide]: pathName !== '/faq',
+        })}
+      ></div>
+
       <div className={styles.anchor} data-section id="fa"></div>
       <Container className={styles.faq_wrapper}>
         <div className={styles.faq_wrapper_titleWrap}>
@@ -45,9 +61,7 @@ const FAQ = () => {
               FAQ
             </Typography>
           )}
-          {pathName === '/faq' ? (
-            <Faq className={styles.faq_wrapper_titleWrap_icon} />
-          ) : (
+          {pathName !== '/faq' && (
             <Button variant="borderAndTransparent" href={'/faq'} link={true}>
               See all FAQ
             </Button>

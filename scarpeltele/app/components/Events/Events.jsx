@@ -5,6 +5,7 @@ import styles from './events.module.scss';
 import Location from '../../assets/icons/Location';
 import Slider from '../Slider/Slider';
 import { urlFor } from '../../lib/client';
+/* eslint-disable @next/next/no-img-element */
 
 const Events = ({ events }) => {
   return (

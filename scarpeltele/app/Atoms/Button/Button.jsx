@@ -5,6 +5,7 @@ import Link from 'next/link';
 const Button = ({
   children,
   variant,
+  onClick,
   className,
   link = false,
   type = 'button',
@@ -26,7 +27,7 @@ const Button = ({
       {children}
     </Link>
   ) : (
-    <button type={type} className={buttonClasses}>
+    <button onClick={onClick} type={type} className={buttonClasses}>
       {children}
     </button>
   );

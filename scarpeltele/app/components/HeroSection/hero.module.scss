@@ -1,14 +1,40 @@
 @import '../../styles/variables';
 .parallax {
-  & > img {
-    width: 48rem;
-  }
+  position: absolute;
+  background-image: url('../../assets/heroLeft.png');
+  width: 48rem;
+  height: 51rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  top: 10%;
+  left: -17%;
+  transition: 100ms linear all;
+  transform-origin: 0%;
 }
+.parallax2 {
+  background-image: url('../../assets/heroRight.png');
+  width: 89rem;
+  position: absolute;
+  background-size: contain;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  transition: 150ms linear all;
+  right: -33%;
+  top: 20%;
+  height: 95rem;
+}
+
 .heroSection {
+  background-size: cover;
+
+  background-position: center;
   background-color: $primary-green;
   padding-top: 9.6rem;
+  position: relative;
+
   overflow: hidden;
-  background-image: url('../../assets/heroRight.png');
   background-size: 92rem;
   background-repeat: no-repeat;
   background-position: 150% 145%;
@@ -75,8 +101,18 @@
     transform: translate(54%, 19%);
   }
 }
-
+@media screen and (max-width: 900px) {
+  .parallax {
+  }
+  .parallax2 {
+  }
+}
 @media screen and (max-width: 768px) {
+  .parallax {
+  }
+  .parallax2 {
+  }
+
   .heroSection {
     &_wrapper {
       &_benefitList {
@@ -101,6 +137,15 @@
   }
 }
 @media screen and (max-width: 415px) {
+  .parallax {
+    top: -22%;
+    left: -80%;
+  }
+  .parallax2 {
+    width: 70rem;
+    right: -100%;
+  }
+
   .heroSection {
     &_wrapper {
       &_title {

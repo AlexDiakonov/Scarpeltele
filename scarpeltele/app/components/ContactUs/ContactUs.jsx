@@ -8,9 +8,10 @@ import FormIllustration from '../../assets/illustrations/FormIllustration';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import styles from './contactUs.module.scss';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import MobileS from '@/app/assets/illustrations/MobileS';
+import useAnimOnScroll from '@/app/utils/useAnimOnScroll';
 
 const ContactUs = () => {
   const [formData, setData] = useState({
@@ -22,6 +23,12 @@ const ContactUs = () => {
   });
 
   const form = useRef();
+
+  const [currentPosition, setPosition] = useState({});
+  const [top, setTop] = useState(0);
+  const ref = useRef(null);
+
+  useAnimOnScroll(ref, setTop, setPosition, currentPosition, 0.7);
 
   const notify = () =>
     toast.success('Form sent successfully', {
@@ -74,9 +81,14 @@ const ContactUs = () => {
   };
 
   return (
-    <div id="contact" className={styles.contactUs}>
+    <div ref={ref} id="contact" className={styles.contactUs}>
+      <div
+        style={{
+          transform: `translate(${0}%, ${top / 4}%) rotate(${top / 10}deg)`,
+        }}
+        className={styles.parallax}
+      ></div>
       <div data-section id="contac" className={styles.anchor}></div>
-      <MobileS className={styles.contactUs_mobileImage} />
 
       <ToastContainer
         position="top-right"
@@ -90,7 +102,7 @@ const ContactUs = () => {
         pauseOnHover
         theme="colored"
       />
-      <FormIllustration className={styles.contactUs_image} />
+
       <Container className={styles.contactUs_wrapper}>
         <div className={styles.contactUs_wrapper_content}>
           <Typography
@@ -107,7 +119,6 @@ const ContactUs = () => {
             We will get back to you as soon as possible
           </Typography>
         </div>
-        <FormIllustration className={styles.contactUs_wrapper_image} />
 
         <form
           ref={form}

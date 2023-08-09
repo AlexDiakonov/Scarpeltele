@@ -1,15 +1,19 @@
+'use client';
 import styles from './careers.module.scss';
 import Container from '../Atoms/Container/Container';
 import Typography from '../Atoms/Typography/Typography';
 import OpportunitiesMobile from '../assets/illustrations/OpportunitiesMobile';
 import CareerItem from './CareerItem';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import CareerModal from './CareerModal';
 import NoPosition from './NoPosition';
+import useAnimOnScroll from '../utils/useAnimOnScroll';
 
 const Opportunities = ({ careers }) => {
   const [modalItem, setItem] = useState({});
-
+  const [currentPosition, setPosition] = useState({});
+  const [top, setTop] = useState(0);
+  const ref = useRef(null);
   const modalItemHandler = (item) => {
     setItem(item);
   };
@@ -17,9 +21,13 @@ const Opportunities = ({ careers }) => {
   const closeModal = () => {
     setItem({});
   };
-
+  useAnimOnScroll(ref, setTop, setPosition, currentPosition, 1.2);
   return (
-    <div className={styles.careers}>
+    <div ref={ref} className={styles.careers}>
+      <div
+        style={{ transform: `translate(${0}%, ${top}%` }}
+        className={styles.parallax}
+      ></div>
       <div className={styles.careers_wrapper}>
         <Container className={styles.careers_wrapper_container}>
           <Typography

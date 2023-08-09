@@ -3,6 +3,20 @@
   justify-content: center;
   position: relative;
 
+  .parallax {
+    position: absolute;
+    width: 400px;
+    height: 220px;
+    top: 30%;
+    left: -1%;
+    overflow: hidden;
+    &_icon {
+      position: absolute;
+      bottom: -50%;
+      left: -30%;
+      transition: 150ms linear all;
+    }
+  }
   .anchor {
     position: absolute;
     top: 40%;
@@ -14,12 +28,6 @@
     position: relative;
     align-self: self-start;
     flex: 1 2;
-
-    &_icon {
-      position: absolute;
-      bottom: -269%;
-      left: -19%;
-    }
   }
 
   &_list {
@@ -46,9 +54,29 @@
     }
   }
 }
+@media screen and (max-width: 1200px) {
+  .solution {
+    .parallax {
+      width: 350px;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .solution {
+    .parallax {
+      width: 320px;
+      transform: rotate(-45deg);
+      left: -10%;
+      top: 40%;
+    }
+  }
+}
 
 @media screen and (max-width: 768px) {
   .solution {
+    .parallax {
+      display: none;
+    }
     flex-direction: column;
     &_title {
       width: unset;

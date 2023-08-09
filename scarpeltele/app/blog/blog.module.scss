@@ -1,5 +1,20 @@
 @import '../styles/variables';
 .blogHero {
+  position: relative;
+  overflow: hidden;
+  .parallax {
+    transition: linear 100ms all;
+    width: 35rem;
+    height: 35rem;
+    position: absolute;
+    right: 5%;
+    top: -8%;
+    background-image: url('../assets/pencil.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
   .mobilePencil {
     display: none;
   }

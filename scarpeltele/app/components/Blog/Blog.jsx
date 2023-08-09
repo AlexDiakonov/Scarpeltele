@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { urlFor } from '../../lib/client';
 import { format } from 'date-fns';
 import Link from 'next/link';
+/* eslint-disable @next/next/no-img-element */
 
 const Blog = ({ posts }) => {
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import values from '../assets/values.png';
 import styles from './careers.module.scss';
 

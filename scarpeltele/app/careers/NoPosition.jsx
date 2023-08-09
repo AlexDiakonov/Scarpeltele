@@ -1,12 +1,17 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import NoJobs from '../assets/icons/NoJobs';
 import Button from '../Atoms/Button/Button';
 import Typography from '../Atoms/Typography/Typography';
 import styles from './careers.module.scss';
 import ArrowTopRight from '../assets/icons/ArrowTopRight';
 import MailIcon from '../assets/icons/MailIcon';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 const NoPosition = () => {
+  const [copied, setCopied] = useState(false);
   const mail = 'sskvortsova@scarpeltele.com';
+
   return (
     <div className={styles.noJobs}>
       <NoJobs />
@@ -29,15 +34,12 @@ const NoPosition = () => {
             Contact our HR
             <ArrowTopRight className={styles.overlay_modal_footer_link_icon} />
           </Button>
-          <Button
-            className={styles.overlay_modal_footer_link}
-            onClick={() => {
-              navigator.clipboard.writeText(mail);
-            }}
-          >
-            Copy mail
-            <MailIcon className={styles.overlay_modal_footer_link_icon} />
-          </Button>
+          <CopyToClipboard onCopy={() => setCopied(!copied)} text={mail}>
+            <Button className={styles.overlay_modal_footer_link}>
+              Copy mail
+              <MailIcon className={styles.overlay_modal_footer_link_icon} />
+            </Button>
+          </CopyToClipboard>
         </div>
       </div>
     </div>

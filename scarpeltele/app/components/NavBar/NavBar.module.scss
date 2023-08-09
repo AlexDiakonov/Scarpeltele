@@ -79,7 +79,6 @@
 }
 .active {
   color: $primary-blue;
-  // border-bottom: 3px solid $primary-blue;
   position: relative;
   &:after {
     content: '';
@@ -96,6 +95,23 @@
   }
 }
 @media screen and (max-width: 1024px) {
+  .active {
+    color: $basic-black;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+
+      bottom: 0;
+      display: block;
+      width: 104%;
+      height: 0;
+      transition: 150ms ease-in-out all;
+      height: 0rem;
+      transform: scaleX(1);
+      border-bottom: 0px;
+    }
+  }
   .navWrapper {
     &_menuContainer {
       background-color: $primary-blue;
@@ -159,7 +175,12 @@
           &_item {
             padding: 0 2rem 0 2rem;
             height: 6rem;
-
+            &:hover &_link {
+              color: $basic-black;
+              &:after {
+                transform: scaleX(0);
+              }
+            }
             &:not(:last-child) {
               margin-right: unset;
             }
@@ -193,7 +214,7 @@
 
       & > .navWrapper_menuContainer_organizer {
         padding: 3rem 0 7.2rem;
-        height: 40rem;
+        height: auto;
       }
     }
   }
@@ -211,6 +232,7 @@
           justify-content: space-between;
           height: 100%;
           margin-bottom: 0;
+          flex-wrap: nowrap;
 
           &_item {
             display: flex;

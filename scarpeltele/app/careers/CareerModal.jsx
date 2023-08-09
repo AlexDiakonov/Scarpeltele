@@ -1,13 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import { useRef } from 'react';
 import Typography from '../Atoms/Typography/Typography';
-import UrlImage from '../Atoms/UrlImage';
+
 import ArrowTopRight from '../assets/icons/ArrowTopRight';
 import useClickOutside from '../utils/useClickOutside';
 import styles from './careers.module.scss';
 import LocationIcon from '../assets/icons/Location';
 import Button from '../Atoms/Button/Button';
 import MailIcon from '../assets/icons/MailIcon';
+import { urlFor } from '../lib/client';
 
 const CareerModal = ({ modalItem, closeModal }) => {
   const mail = 'sskvortsova@scarpeltele.com';
@@ -19,9 +21,9 @@ const CareerModal = ({ modalItem, closeModal }) => {
       <div className={styles.overlay_modal} ref={ref}>
         <header className={styles.overlay_modal_header}>
           <div className={styles.overlay_modal_header_imgWrapper}>
-            <UrlImage
+            <img
               className={styles.overlay_modal_header_imgWrapper_img}
-              src={modalItem.careerAvatar}
+              src={urlFor(modalItem.careerAvatar).src}
               alt="career_image"
             />
           </div>

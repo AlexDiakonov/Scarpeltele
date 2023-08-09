@@ -1,18 +1,15 @@
 import './globals.scss';
 
-// export const metadata = {
-//   icons: {
-//     icon: './favicon.png',
-//   },
-// };
+export const metadata = {
+  title: 'Scarpel: Score Scalable SMS. Worldwide.',
+  description:
+    "Aim customer trust with Scarpel: boost your marketing, secure your communication from fraud, enhance your users' account security.",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <title>Scarpeltele</title>
-        {/* <link sizes="any" type="image/png" rel="icon" href="./favicon.png" /> */}
-      </head>
+      <head></head>
       <body>{children}</body>
     </html>
   );

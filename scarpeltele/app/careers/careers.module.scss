@@ -1,17 +1,25 @@
 @import '../styles/variables';
 
 .careers {
-  background-image: url('../assets/search.png');
-  background-repeat: no-repeat;
-  background-size: 28.2rem 43.1rem;
-  background-position: 75% 17%;
-  background-attachment: fixed;
+  position: relative;
+  .parallax {
+    position: absolute;
+    background-image: url('../assets/search.png');
+    background-repeat: no-repeat;
+    width: 31rem;
+    right: 10%;
+    top: 8%;
+    z-index: -1;
+    background-size: contain;
+    height: 46rem;
+    transition: 150ms linear all;
+  }
+
   &_wrapper {
     background-color: $secondary-blue;
-    z-index: -1;
     padding-top: 17.5rem;
+    z-index: -2;
     position: relative;
-
     .pc {
       position: absolute;
       right: 25%;
@@ -127,11 +135,13 @@
   background-color: $secondary-green-lighter;
   &_imgWrapper {
     margin: 0 auto;
-    max-height: 59.2rem;
+    height: 59.2rem;
     max-width: 100%;
     &_img {
       height: 100%;
       object-fit: contain;
+      margin: 0 auto;
+      display: block;
     }
   }
 }
@@ -177,7 +187,7 @@
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   top: 0;
@@ -185,6 +195,7 @@
   background-color: rgba($color: $primary-blue, $alpha: 0.5);
   display: flex;
   align-items: center;
+  z-index: 10;
   justify-content: center;
 
   &_modal {
@@ -238,6 +249,7 @@
       }
 
       &_btn {
+        text-align: center;
         width: 2.8rem;
         background-color: transparent;
         height: 2.8rem;
@@ -318,8 +330,8 @@
       padding: 0.8rem 2.4rem 2.4rem 2.4rem;
 
       &_link {
-        background: transparent;
-        color: $primary-blue;
+        background-color: transparent !important;
+        color: $primary-blue !important;
         display: flex;
         align-items: center;
         padding: 0.3rem 0;
@@ -406,7 +418,20 @@
   }
 }
 
+@media screen and (max-width: 850px) {
+  .careers {
+    .parallax {
+      right: 4%;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
+  .careers {
+    .parallax {
+      right: 4%;
+    }
+  }
   .positionsContainer {
     &_title {
       display: none;
@@ -460,9 +485,12 @@
 
 @media screen and (max-width: 614px) {
   .careers {
-    background-image: url('../assets/careers/small.png');
-    background-size: 8.8rem;
-    background-position: 100% 12%;
+    .parallax {
+      width: 8.8rem;
+      right: 0;
+      top: 9%;
+      background-image: url('../assets/careers/small.png');
+    }
   }
 }
 @media screen and (max-width: 415px) {

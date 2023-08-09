@@ -145,9 +145,9 @@ const Footer = () => {
         >
           <ul className={styles.footerContainer_nav_rightSide}>
             <li className={styles.footerContainer_nav_rightSide_item}>
-              <a href={'/blog'}>
+              <Link href={'/blog'}>
                 <Typography variant="body3">Blog</Typography>
-              </a>
+              </Link>
             </li>
             <li className={styles.footerContainer_nav_rightSide_item}>
               <Link href={'/careers'}>
@@ -160,12 +160,12 @@ const Footer = () => {
               </Link>
             </li>
             <li className={styles.footerContainer_nav_rightSide_item}>
-              <a href={'#'}>
+              <Link href={'/privacy-policy'}>
                 <Typography variant="body3">Privacy Policy</Typography>
-              </a>
+              </Link>
             </li>
             <li className={styles.footerContainer_nav_rightSide_item}>
-              <a href={'#'}>
+              <a href={'/terms-of-use'}>
                 <Typography variant="body3">Terms of use</Typography>
               </a>
             </li>

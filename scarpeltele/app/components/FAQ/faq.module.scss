@@ -1,8 +1,24 @@
 @import '../../styles/variables';
-
+.hide {
+  display: none;
+}
 .faq {
   background-color: $secondary-green-lighter;
   position: relative;
+
+  .parallax {
+    position: absolute;
+    height: 16rem;
+    width: 18rem;
+    background-image: url('../../assets/FAQ.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 20%;
+    top: 13%;
+    z-index: 1;
+    transition: 150ms linear all;
+  }
   .anchor {
     position: absolute;
     top: 50%;
@@ -10,6 +26,8 @@
   }
 
   &_wrapper {
+    z-index: 2;
+    position: relative;
     &_titleWrap {
       display: flex;
       justify-content: space-between;
@@ -72,6 +90,9 @@
 }
 @media screen and (max-width: 1024px) {
   .faq {
+    .parallax {
+      top: 7%;
+    }
     &_wrapper {
       &_faqBlock {
         display: flex;
@@ -106,6 +127,10 @@
 
 @media screen and (max-width: 415px) {
   .faq {
+    .parallax {
+      width: 7.5rem;
+      right: 10%;
+    }
     &_wrapper {
       &_titleWrap {
         &_icon {

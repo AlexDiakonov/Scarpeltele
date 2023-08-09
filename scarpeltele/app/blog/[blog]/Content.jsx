@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Typography from '../../Atoms/Typography/Typography';
 import { urlFor } from '../../lib/client';
 import { format } from 'date-fns';

@@ -1,22 +1,32 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import Typography from '../Atoms/Typography/Typography';
 import Container from '../Atoms/Container/Container';
-import Pencil from '../assets/illustrations/Pencil';
-import { urlFor } from '../lib/client';
 import styles from './blog.module.scss';
 import { format } from 'date-fns';
 import ArrowTopRight from '../assets/icons/ArrowTopRight';
 import classNames from 'classnames';
 
+import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import { urlFor } from '../lib/client';
+import useAnimOnScroll from '../utils/useAnimOnScroll';
+
 const HeroSection = ({ post }) => {
   const date = format(new Date(post?.publishedAt), 'dd MMM yyyy');
+  const [currentPosition, setPosition] = useState({});
+  const [top, setTop] = useState(0);
+  const ref = useRef(null);
+
+  useAnimOnScroll(ref, setTop, setPosition, currentPosition, 2.6);
 
   return (
-    <div className={styles.blogHero}>
-      <Pencil className={styles.mobilePencil} />
-
+    <div ref={ref} className={styles.blogHero}>
+      <div
+        style={{ transform: `translate(${top}px, ${top / 1.6}%` }}
+        className={styles.parallax}
+      ></div>
       <Container className={styles.blogHero_wrapper}>
-        <Pencil className={styles.blogHero_wrapper_bg} />
         <Typography
           className={classNames(styles.blogHero_wrapper_title, styles.NoMobile)}
           component="h1"
@@ -32,13 +42,13 @@ const HeroSection = ({ post }) => {
           Scarpel Blog.
           <br /> News and insights
         </Typography>
-        <a href={`/blog/${post?.slug.current}`} className={styles.post}>
+        <Link href={`/blog/${post?.slug.current}`} className={styles.post}>
           <div className={styles.post_imgWrapper}>
             <img
               className={styles.post_imgWrapper_img}
               alt="hero_image"
               src={urlFor(post.mainImage).src}
-            ></img>
+            />
           </div>
           <div className={styles.post_content}>
             <div className={styles.post_content_dateWrapper}>
@@ -65,7 +75,7 @@ const HeroSection = ({ post }) => {
               {post.description.slice(0, 165)}...
             </Typography>
           </div>
-        </a>
+        </Link>
       </Container>
     </div>
   );

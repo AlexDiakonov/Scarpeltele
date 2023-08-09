@@ -3,7 +3,22 @@
 .contactUs {
   background-color: $secondary-blue-light;
   position: relative;
+  z-index: -1;
+  overflow: hidden;
 
+  .parallax {
+    position: absolute;
+    background-image: url('../../assets/conact.png');
+    width: 420px;
+    height: 600px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 14%;
+    z-index: -1;
+    left: 25%;
+    transition: 150ms linear all;
+  }
   .anchor {
     position: absolute;
     top: 50%;
@@ -64,11 +79,39 @@
     }
   }
 }
+@media screen and (max-width: 1470px) {
+  .contactUs {
+    .parallax {
+      left: 17%;
+    }
+  }
+}
+
+@media screen and (max-width: 1289px) {
+  .contactUs {
+    .parallax {
+      left: 12%;
+    }
+  }
+}
+@media screen and (max-width: 1260px) {
+  .contactUs {
+    .parallax {
+      left: 4%;
+    }
+  }
+}
 
 @media screen and (max-width: 768px) {
   .contactUs {
     position: relative;
-
+    .parallax {
+      width: 280px;
+      height: 490px;
+      right: 5%;
+      top: -8%;
+      left: unset;
+    }
     &_image {
       display: none;
     }
