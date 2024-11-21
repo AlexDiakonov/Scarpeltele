@@ -22,16 +22,13 @@ const PaperPlane = ({
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M288.512 23C87.5135 42 32 114.5 26.5078 245"
-        stroke="#00031B"
-        strokeDasharray="4 4"
-      />
-      <path
-        d="M291.859 29.6462L297.479 22.884L300.258 26.3036L291.859 29.6462Z"
-        fill="#0D3497"
+        d="M292 29.5C91.002 48.5 32 114.5 26.5078 245"
+        stroke="#155000"
+        strokeLinejoin="round"
       />
       <path
         d="M291.908 29.5188L297.453 22.8736L300.201 26.2621L291.908 29.5188Z"
+        fill="#86B30F"
         stroke="#155000"
         strokeLinejoin="round"
       />

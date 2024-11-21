@@ -1,19 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
-'use client';
-import Typography from '../Atoms/Typography/Typography';
-import Container from '../Atoms/Container/Container';
-import styles from './blog.module.scss';
-import { format } from 'date-fns';
-import ArrowTopRight from '../assets/icons/ArrowTopRight';
-import classNames from 'classnames';
+"use client";
+import Typography from "../Atoms/Typography/Typography";
+import Container from "../Atoms/Container/Container";
+import styles from "./blog.module.scss";
+import { format } from "date-fns";
+import ArrowTopRight from "../assets/icons/ArrowTopRight";
+import classNames from "classnames";
 
-import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
-import { urlFor } from '../lib/client';
-import useAnimOnScroll from '../utils/useAnimOnScroll';
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { urlFor } from "../lib/client";
+import useAnimOnScroll from "../utils/useAnimOnScroll";
 
 const HeroSection = ({ post }) => {
-  const date = format(new Date(post?.publishedAt), 'dd MMM yyyy');
+  const date = format(new Date(post?.publishedAt), "dd MMM yyyy");
   const [currentPosition, setPosition] = useState({});
   const [top, setTop] = useState(0);
   const ref = useRef(null);
@@ -23,7 +23,7 @@ const HeroSection = ({ post }) => {
   return (
     <div ref={ref} className={styles.blogHero}>
       <div
-        style={{ transform: `translate(${top}px, ${top / 1.6}%` }}
+        style={{ transform: `translate(${top}px, ${top / 2}%` }}
         className={styles.parallax}
       ></div>
       <Container className={styles.blogHero_wrapper}>

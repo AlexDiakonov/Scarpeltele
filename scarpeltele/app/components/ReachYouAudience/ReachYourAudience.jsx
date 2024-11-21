@@ -1,13 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-'use client';
-import Typography from '../../Atoms/Typography/Typography';
-import Button from '../../Atoms/Button/Button';
-import Container from '../../Atoms/Container/Container';
-import ReachYourAudienceImg from '../../assets/illustrations/ReachYourAudienceImg';
-import styles from './reach.module.scss';
-import { useRef, useState } from 'react';
-import useAnimOnScroll from '@/app/utils/useAnimOnScroll';
-import reachGif from '../../assets/reachYour.gif';
+"use client";
+import Typography from "../../Atoms/Typography/Typography";
+import Button from "../../Atoms/Button/Button";
+import Container from "../../Atoms/Container/Container";
+import ReachYourAudienceImg from "../../assets/illustrations/ReachYourAudienceImg";
+import styles from "./reach.module.scss";
+import { useRef, useState } from "react";
+import useAnimOnScroll from "@/app/utils/useAnimOnScroll";
+import LottieAnimation from "../LottieAnim/LottieAnim";
+
 const ReachYourAudience = () => {
   const [currentPosition, setPosition] = useState({});
   const [top, setTop] = useState(0);
@@ -42,8 +43,8 @@ const ReachYourAudience = () => {
           Book a demo
         </Button>
       </div>
-      <div>
-        <img src={reachGif.src} alt="section_img" />
+      <div className={styles.section_wrapper_imgWrapper}>
+        <LottieAnimation />
       </div>
     </Container>
   );

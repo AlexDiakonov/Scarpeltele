@@ -1,13 +1,13 @@
-'use client';
-import styles from './careers.module.scss';
-import Container from '../Atoms/Container/Container';
-import Typography from '../Atoms/Typography/Typography';
-import OpportunitiesMobile from '../assets/illustrations/OpportunitiesMobile';
-import CareerItem from './CareerItem';
-import { useRef, useState } from 'react';
-import CareerModal from './CareerModal';
-import NoPosition from './NoPosition';
-import useAnimOnScroll from '../utils/useAnimOnScroll';
+"use client";
+import styles from "./careers.module.scss";
+import Container from "../Atoms/Container/Container";
+import Typography from "../Atoms/Typography/Typography";
+import OpportunitiesMobile from "../assets/illustrations/OpportunitiesMobile";
+import CareerItem from "./CareerItem";
+import { useRef, useState } from "react";
+import CareerModal from "./CareerModal";
+import NoPosition from "./NoPosition";
+import useAnimOnScroll from "../utils/useAnimOnScroll";
 
 const Opportunities = ({ careers }) => {
   const [modalItem, setItem] = useState({});
@@ -24,11 +24,11 @@ const Opportunities = ({ careers }) => {
   useAnimOnScroll(ref, setTop, setPosition, currentPosition, 1.2);
   return (
     <div ref={ref} className={styles.careers}>
-      <div
-        style={{ transform: `translate(${0}%, ${top}%` }}
-        className={styles.parallax}
-      ></div>
       <div className={styles.careers_wrapper}>
+        <div
+          style={{ transform: `translate(${0}%, ${top}%` }}
+          className={styles.parallax}
+        ></div>
         <Container className={styles.careers_wrapper_container}>
           <Typography
             className={styles.careers_wrapper_container_title}

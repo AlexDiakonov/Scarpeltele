@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import ThreeLinesSmall from '../../assets/icons/ThreeLinesSmall';
-import styles from './input.module.scss';
+import classNames from "classnames";
+import ThreeLinesSmall from "../../assets/icons/ThreeLinesSmall";
+import styles from "./input.module.scss";
 
 const Input = ({
   isRequired = false,
@@ -8,10 +8,10 @@ const Input = ({
   label,
   inputHandler,
   textArea = false,
-  type = 'text',
+  type = "text",
   className,
-  id = '',
-  name = '',
+  id = "",
+  name = "",
 }) => {
   return (
     <div className={classNames(styles.inputContainer, className)}>
@@ -26,7 +26,6 @@ const Input = ({
               name={name}
               onChange={inputHandler}
             />
-            <ThreeLinesSmall />
           </>
         ) : (
           <input

@@ -1,6 +1,6 @@
-import Container from '../Atoms/Container/Container';
-import Typography from '../Atoms/Typography/Typography';
-import styles from './careers.module.scss';
+import Container from "../Atoms/Container/Container";
+import Typography from "../Atoms/Typography/Typography";
+import styles from "./careers.module.scss";
 const PromoSection = () => {
   return (
     <div className={styles.promo}>
@@ -20,7 +20,7 @@ const PromoSection = () => {
               component="h2"
               variant="accentTitle"
             >
-              40+
+              50+
             </Typography>
             <Typography
               className={styles.promo_container_list_item_text}

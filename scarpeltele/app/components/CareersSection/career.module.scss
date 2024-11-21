@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 .careerSection {
   background-color: $secondary-blue;
   position: relative;
@@ -7,13 +7,15 @@
   &_lense {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 10%;
   }
 
   &_s {
     position: absolute;
+    width: 270px;
+    height: 390px;
+    top: -15%;
     right: 0;
-    bottom: 0;
   }
 
   &_wrapper {

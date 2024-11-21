@@ -35,7 +35,8 @@ export default defineType({
     defineField({
       name: 'responsibilities',
       title: 'Responsibilities',
-      type: 'text',
+      type: 'array',
+      of: [{type: 'string'}],
     }),
 
     defineField({

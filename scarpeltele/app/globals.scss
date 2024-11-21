@@ -1,40 +1,44 @@
 @font-face {
-  font-family: 'sf-pro';
-  src: url('./font/SF-Pro-Display-Light.otf');
+  font-family: "sf-pro";
+  src: url("./font/SF-Pro-Display-Light.otf");
   font-weight: 300;
 }
 
 @font-face {
-  font-family: 'sf-pro';
-  src: url('./font/SF-Pro-Display-Bold.otf');
+  font-family: "sf-pro";
+  src: url("./font/SF-Pro-Display-Bold.otf");
   font-weight: 700;
 }
 
 @font-face {
-  font-family: 'sf-pro';
-  src: url('./font/SF-Pro-Display-Regular.otf');
+  font-family: "sf-pro";
+  src: url("./font/SF-Pro-Display-Regular.otf");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'sf-pro';
-  src: url('./font/SF-Pro-Display-Semibold.otf');
+  font-family: "sf-pro";
+  src: url("./font/SF-Pro-Display-Semibold.otf");
   font-weight: 600;
 }
 
 @font-face {
-  font-family: 'sf-pro';
-  src: url('./font/SF-Pro-Display-Medium.otf');
+  font-family: "sf-pro";
+  src: url("./font/SF-Pro-Display-Medium.otf");
   font-weight: 500;
 }
 
 html,
 body {
-  overflow-x: hidden;
   font-size: 10px;
-  font-family: 'sf-pro';
+  font-family: "sf-pro";
   margin: 0;
   height: 100%;
+  height: -webkit-fill-available;
+}
+body {
+  padding: 0;
+  min-height: 100vh;
 }
 
 html {
@@ -47,7 +51,7 @@ html {
 }
 
 button {
-  font-family: 'sf-pro';
+  font-family: "sf-pro";
 }
 
 input {

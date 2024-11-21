@@ -5,6 +5,7 @@ const Typography = ({
   variant = 'body2m',
   className,
   component: Component = 'span',
+  onClick,
   ...restProps
 }) => {
   const classes = classNames(
@@ -24,10 +25,10 @@ const Typography = ({
       [styles.body4]: variant === 'body4',
       [styles.body5]: variant === 'body5',
     },
-    className,
+    className
   );
 
-  return <Component className={classes} {...restProps} />;
+  return <Component onClick={onClick} className={classes} {...restProps} />;
 };
 
 export default Typography;

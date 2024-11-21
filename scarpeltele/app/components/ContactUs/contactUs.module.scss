@@ -1,21 +1,18 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .contactUs {
   background-color: $secondary-blue-light;
   position: relative;
-  z-index: -1;
   overflow: hidden;
-
   .parallax {
     position: absolute;
-    background-image: url('../../assets/conact.png');
+    background-image: url("../../assets/conact.png");
     width: 420px;
     height: 600px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     top: 14%;
-    z-index: -1;
     left: 25%;
     transition: 150ms linear all;
   }
@@ -72,8 +69,9 @@
       &_textArea {
         width: 100%;
         margin-bottom: 2.4rem;
+        resize: none;
         & > div > textarea {
-          max-height: 4.8rem;
+          height: 10rem;
         }
       }
     }

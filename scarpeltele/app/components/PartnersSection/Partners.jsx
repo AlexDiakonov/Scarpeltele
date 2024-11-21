@@ -1,8 +1,9 @@
+'use client';
 import React from 'react';
 import Container from '../../Atoms/Container/Container';
 import Typography from '../../Atoms/Typography/Typography';
 import styles from './partners.module.scss';
-import partnerLogos from './logos';
+import imagePaths from './logos';
 import Image from 'next/image';
 
 const Partners = () => {
@@ -10,13 +11,13 @@ const Partners = () => {
     <Container className={styles.partnerSection}>
       <Typography
         className={styles.partnerSection_title}
-        component="h4"
-        variant="h4Title"
+        component='h4'
+        variant='h4Title'
       >
         They trust us
       </Typography>
       <div className={styles.partnerSection_logoWrapper}>
-        {partnerLogos.map((item, id) => {
+        {imagePaths.map((item, id) => {
           return (
             <div
               className={styles.partnerSection_logoWrapper_logo}
@@ -31,7 +32,7 @@ const Partners = () => {
           );
         })}
       </div>
-      <Typography variant="body2">...and 100+ other companies</Typography>
+      <Typography variant='body2'>...and 100+ other companies</Typography>
     </Container>
   );
 };

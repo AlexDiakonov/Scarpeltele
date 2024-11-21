@@ -7,6 +7,7 @@ export const client = createClient({
   useCdn: true, // set to `false` to bypass the edge cache
   apiVersion: '2023-05-03',
   token: process.env.NEXT_PUBLIC_SANITY_KEY,
+  
 });
 
 // eslint-disable-next-line react-hooks/rules-of-hooks

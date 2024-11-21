@@ -1,7 +1,7 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 .parallax {
   position: absolute;
-  background-image: url('../../assets/heroLeft.png');
+  background-image: url("../../assets/heroLeft.svg");
   width: 48rem;
   height: 51rem;
   background-size: contain;
@@ -14,7 +14,7 @@
   transform-origin: 0%;
 }
 .parallax2 {
-  background-image: url('../../assets/heroRight.png');
+  background-image: url("../../assets/heroRight.svg");
   width: 89rem;
   position: absolute;
   background-size: contain;
@@ -55,6 +55,7 @@
       &_icon {
         position: absolute;
         top: 0;
+        left: 30px;
         transform: rotateY(180deg) translate(-40%, -100%);
       }
     }

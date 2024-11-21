@@ -1,5 +1,50 @@
 @import '../../styles/variables';
 
+.dropTitle {
+  margin-bottom: 1.2rem;
+  display: block;
+  cursor: pointer;
+  transition: 150ms linear all;
+  & > svg {
+    transition: linear 150ms all;
+  }
+  &:hover {
+    color: $primary-green;
+    & > svg {
+      & > path {
+        stroke: $primary-green;
+      }
+    }
+  }
+}
+.dropItem {
+  transition: linear all 150ms;
+  &:hover {
+    color: $primary-green;
+  }
+}
+
+.dropContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  position: absolute;
+  max-height: 0rem;
+  transition: 250ms linear all;
+}
+.openContainer {
+  max-height: 20rem;
+}
+
+.dropArrow {
+  margin-left: 8px;
+  transition: 150ms linear all;
+  transform: rotateX(180deg);
+}
+.turnArrow {
+  transform: rotateX(0deg);
+}
 .bgWrapper {
   background-color: $primary-blue;
   display: flex;
@@ -46,6 +91,9 @@
           color: $primary-green;
         }
       }
+      &_drop {
+        margin-left: 3.2rem;
+      }
     }
   }
 
@@ -55,21 +103,37 @@
     width: 50%;
 
     &_logo {
+      transition: 160ms linear all;
       & > svg > path {
         fill: $basic-white;
       }
     }
 
+    &_logo:hover {
+      transform-origin: center;
+      transform: scale(1.03);
+    }
     &_location {
       font-style: normal;
       max-width: 20rem;
+      &_text {
+        transition: 150ms linear all;
+      }
+      &:hover {
+        color: $secondary-green-light;
+      }
     }
 
     &_links {
       &_item {
         &_link {
           & > .footerLinkText {
+            transition: 150ms linear all;
+
             align-items: center;
+          }
+          &:hover {
+            color: $secondary-green-light;
           }
         }
 
@@ -155,7 +219,9 @@
     &_nav {
       &_rightSide {
         flex-direction: column;
-
+        &_drop {
+          margin-left: 0rem;
+        }
         &_item {
           &:not(:first-child) {
             margin-left: unset;
@@ -185,5 +251,8 @@
         }
       }
     }
+  }
+  .dropContainer {
+    position: static;
   }
 }

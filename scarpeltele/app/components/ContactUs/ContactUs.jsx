@@ -1,25 +1,23 @@
-'use client';
+"use client";
 
-import Button from '../../Atoms/Button/Button';
-import Container from '../../Atoms/Container/Container';
-import Typography from '../../Atoms/Typography/Typography';
-import Input from '../../Atoms/Input/Input';
-import FormIllustration from '../../assets/illustrations/FormIllustration';
-import emailjs from '@emailjs/browser';
-import { ToastContainer, toast } from 'react-toastify';
-import styles from './contactUs.module.scss';
-import { useEffect, useRef, useState } from 'react';
-import 'react-toastify/dist/ReactToastify.css';
-import MobileS from '@/app/assets/illustrations/MobileS';
-import useAnimOnScroll from '@/app/utils/useAnimOnScroll';
+import Button from "../../Atoms/Button/Button";
+import Container from "../../Atoms/Container/Container";
+import Typography from "../../Atoms/Typography/Typography";
+import Input from "../../Atoms/Input/Input";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import styles from "./contactUs.module.scss";
+import { useRef, useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
+import useAnimOnScroll from "@/app/utils/useAnimOnScroll";
 
 const ContactUs = () => {
   const [formData, setData] = useState({
-    from_name: '',
-    from_company: '',
-    from_email: '',
-    from_phone: '',
-    message: '',
+    from_name: "",
+    from_company: "",
+    from_email: "",
+    from_phone: "",
+    message: "",
   });
 
   const form = useRef();
@@ -31,15 +29,15 @@ const ContactUs = () => {
   useAnimOnScroll(ref, setTop, setPosition, currentPosition, 0.7);
 
   const notify = () =>
-    toast.success('Form sent successfully', {
-      position: 'top-right',
-      autoClose: 5000,
+    toast.success("Form sent successfully", {
+      position: "top-right",
+      autoClose: 4000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: 'colored',
+      theme: "colored",
     });
 
   const inputHandler = (e) => {
@@ -50,33 +48,33 @@ const ContactUs = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        'service_1rs4avr',
-        'template_oue6kxb',
+        "service_6cpnnsj",
+        "template_oue6kxb",
         form.current,
-        process.env.NEXT_PUBLIC_EMAIL_KEY,
+        process.env.local.NEXT_PUBLIC_EMAIL_KEY
       )
       .then(
         (result) => {
           console.log(result.text);
           notify();
           setData({
-            from_name: '',
-            from_company: '',
-            from_email: '',
-            from_phone: '',
-            message: '',
+            from_name: "",
+            from_company: "",
+            from_email: "",
+            from_phone: "",
+            message: "",
           });
         },
         (error) => {
           console.log(error.text);
           setData({
-            from_name: '',
-            from_company: '',
-            from_email: '',
-            from_phone: '',
-            message: '',
+            from_name: "",
+            from_company: "",
+            from_email: "",
+            from_phone: "",
+            message: "",
           });
-        },
+        }
       );
   };
 
@@ -84,7 +82,7 @@ const ContactUs = () => {
     <div ref={ref} id="contact" className={styles.contactUs}>
       <div
         style={{
-          transform: `translate(${0}%, ${top / 4}%) rotate(${top / 10}deg)`,
+          transform: `translate(${0}%, ${top / 3}%) rotate(${0}deg)`,
         }}
         className={styles.parallax}
       ></div>
@@ -133,7 +131,7 @@ const ContactUs = () => {
               value={formData.from_name}
               isRequired={true}
               inputHandler={inputHandler}
-              label={'Name'}
+              label={"Name"}
               name="from_name"
             ></Input>
             <Input
@@ -142,7 +140,7 @@ const ContactUs = () => {
               className={styles.contactUs_wrapper_form_inputs_input}
               isRequired={true}
               name="from_company"
-              label={'Company'}
+              label={"Company"}
             ></Input>
             <Input
               inputHandler={inputHandler}
@@ -151,7 +149,7 @@ const ContactUs = () => {
               isRequired={true}
               type="email"
               name="from_email"
-              label={'Email'}
+              label={"Email"}
             ></Input>
             <Input
               inputHandler={inputHandler}
@@ -159,13 +157,13 @@ const ContactUs = () => {
               className={styles.contactUs_wrapper_form_inputs_input}
               type="tel"
               name="from_phone"
-              label={'Phone (optional)'}
+              label={"Phone (optional)"}
             ></Input>
           </div>
 
           <Input
             inputHandler={inputHandler}
-            label={'Message'}
+            label={"Message"}
             value={formData.message}
             className={styles.contactUs_wrapper_form_textArea}
             isRequired={true}

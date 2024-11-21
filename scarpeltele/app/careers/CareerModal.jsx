@@ -1,20 +1,38 @@
 /* eslint-disable @next/next/no-img-element */
-'use client';
-import { useRef } from 'react';
-import Typography from '../Atoms/Typography/Typography';
+"use client";
+import { useRef } from "react";
+import Typography from "../Atoms/Typography/Typography";
 
-import ArrowTopRight from '../assets/icons/ArrowTopRight';
-import useClickOutside from '../utils/useClickOutside';
-import styles from './careers.module.scss';
-import LocationIcon from '../assets/icons/Location';
-import Button from '../Atoms/Button/Button';
-import MailIcon from '../assets/icons/MailIcon';
-import { urlFor } from '../lib/client';
+import ArrowTopRight from "../assets/icons/ArrowTopRight";
+import useClickOutside from "../utils/useClickOutside";
+import styles from "./careers.module.scss";
+import LocationIcon from "../assets/icons/Location";
+import Button from "../Atoms/Button/Button";
+import MailIcon from "../assets/icons/MailIcon";
+import { urlFor } from "../lib/client";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CareerModal = ({ modalItem, closeModal }) => {
-  const mail = 'sskvortsova@scarpeltele.com';
+  const mail = "sskvortsova@scarpeltele.com";
   const ref = useRef(null);
+  console.log(modalItem);
+  const notify = () =>
+    toast.success("Copied to clipboard successfully!", {
+      position: "top-right",
+      autoClose: 3500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
 
+  const copyHandler = () => {
+    navigator.clipboard.writeText(mail);
+    notify();
+  };
   useClickOutside(ref, closeModal, modalItem.title.length > 1);
   return (
     <div className={styles.overlay}>
@@ -71,9 +89,13 @@ const CareerModal = ({ modalItem, closeModal }) => {
             >
               Responsibilities
             </Typography>
-            <Typography component="p" variant="body2">
-              {modalItem.responsibilities}
-            </Typography>
+            <ul className={styles.overlay_modal_main_aboutYou_list}>
+              {modalItem.responsibilities.map((item, id) => (
+                <li key={id}>
+                  <Typography variant="body2"> {item}</Typography>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className={styles.overlay_modal_main_aboutYou}>
             <Typography
@@ -94,6 +116,7 @@ const CareerModal = ({ modalItem, closeModal }) => {
         </main>
         <footer className={styles.overlay_modal_footer}>
           <Button
+            variant={"noBorder"}
             className={styles.overlay_modal_footer_link}
             link={true}
             href="mailto:sskvortsova@scarpeltele.com"
@@ -102,12 +125,11 @@ const CareerModal = ({ modalItem, closeModal }) => {
             <ArrowTopRight className={styles.overlay_modal_footer_link_icon} />
           </Button>
           <Button
+            variant={"noBorder"}
             className={styles.overlay_modal_footer_link}
-            onClick={() => {
-              navigator.clipboard.writeText(mail);
-            }}
+            onClick={copyHandler}
           >
-            Copy mail
+            Copy HR mail
             <MailIcon className={styles.overlay_modal_footer_link_icon} />
           </Button>
         </footer>

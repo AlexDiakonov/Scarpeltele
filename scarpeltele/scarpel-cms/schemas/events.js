@@ -44,9 +44,21 @@ export default defineType({
     }),
 
     defineField({
-      name: 'date',
-      title: 'Event Date',
-      type: 'string',
+      name: 'eventDate',
+      title: 'Event Date Range',
+      type: 'object',
+      fields: [
+        {
+          name: 'startDate',
+          title: 'Start Date',
+          type: 'date',
+        },
+        {
+          name: 'endDate',
+          title: 'End Date',
+          type: 'date',
+        },
+      ],
     }),
   ],
 

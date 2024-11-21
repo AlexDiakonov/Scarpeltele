@@ -17,15 +17,18 @@
       display: flex;
       margin-bottom: 6rem;
       flex-wrap: wrap;
-
+      gap: 32px;
       &_item {
-        margin-right: 2.6rem;
-        max-width: 21.4rem;
+        max-width: 21rem;
+        min-width: 21rem;
         &_title {
           margin-top: 1.2rem;
           margin-bottom: 1.2rem;
         }
       }
+    }
+    &_btn1 {
+      margin-right: 32px;
     }
   }
 }
@@ -34,7 +37,6 @@
   .whyUs {
     &_wrapper {
       &_list {
-        justify-content: space-between;
         &_item {
           max-width: 19rem;
           &_title {
@@ -77,6 +79,22 @@
     }
   }
 }
+@media screen and (max-width: 593px) {
+  .whyUs {
+    &_wrapper {
+      &_btn1 {
+        margin-right: unset;
+      }
+    }
+  }
+
+  .btnFlexer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
 @media screen and (max-width: 415px) {
   .whyUs {
     &_wrapper {

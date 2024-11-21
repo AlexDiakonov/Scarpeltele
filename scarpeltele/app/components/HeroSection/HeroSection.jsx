@@ -1,33 +1,34 @@
-'use client';
-import useAnimOnScroll from '@/app/utils/useAnimOnScroll';
-import Button from '../../Atoms/Button/Button';
-import Container from '../../Atoms/Container/Container';
-import Typography from '../../Atoms/Typography/Typography';
-import MessageIcon from '../../assets/icons/MessageIcon';
-import HeroSms from '../../assets/illustrations/HeroSms';
-import SmsFireWall from '../../assets/illustrations/SmsFireWall';
-import TwoFactorAuth from '../../assets/illustrations/TwoFactorAuth';
-import styles from './hero.module.scss';
-import { useEffect, useRef, useState } from 'react';
+"use client";
+import useAnimOnScroll from "@/app/utils/useAnimOnScroll";
+import Button from "../../Atoms/Button/Button";
+import Container from "../../Atoms/Container/Container";
+import Typography from "../../Atoms/Typography/Typography";
+import MessageIcon from "../../assets/icons/MessageIcon";
+import HeroSms from "../../assets/illustrations/HeroSms";
+import SmsFireWall from "../../assets/illustrations/SmsFireWall";
+import TwoFactorAuth from "../../assets/illustrations/TwoFactorAuth";
+import styles from "./hero.module.scss";
+import { useRef, useState } from "react";
 
 const HeroSection = () => {
   const [currentPosition, setPosition] = useState({});
   const [top, setTop] = useState(0);
+
   const ref = useRef(null);
 
-  useAnimOnScroll(ref, setTop, setPosition, currentPosition, 1.2);
+  useAnimOnScroll(ref, setTop, setPosition, currentPosition, 0.7);
 
   return (
     <div id="home" ref={ref} className={styles.heroSection}>
       <div
         style={{
-          transform: `translate(${0}%, ${top / 1.4}%) rotate(${top * 1.2}deg)`,
+          transform: `translate(${0}%, ${top / 8}%) rotate(${top * 1.4}deg)`,
         }}
         className={styles.parallax}
       ></div>
       <div
         style={{
-          transform: `translate(${0}%, ${top / 1.4}%) rotate(${top * 1.2}deg)`,
+          transform: `translate(${0}%, ${top / 6}%) rotate(${top * 1.4}deg)`,
         }}
         className={styles.parallax2}
       ></div>
@@ -40,7 +41,8 @@ const HeroSection = () => {
           className={styles.heroSection_wrapper_title}
           variant="h1Title"
         >
-          Score Scalable SMS. Worldwide.
+          SMS Solutions, <br />
+          Scaled Globally.
           <MessageIcon className={styles.heroSection_wrapper_title_icon} />
         </Typography>
         <Button

@@ -1,13 +1,13 @@
-import Typography from '../../Atoms/Typography/Typography';
-import daniel from '../../assets/about/Daniel.png';
-import lana from '../../assets/about/Lana.png';
-import nathalie from '../../assets/about/Nathalie.png';
-import vladan from '../../assets/about/Vladan.png';
-import styles from './about.module.scss';
+import Typography from "../../Atoms/Typography/Typography";
+import daniel from "../../assets/about/Daniel.png";
+import lana from "../../assets/about/Lana.png";
+import nathalie from "../../assets/about/Nathalie.png";
+import vladan from "../../assets/about/Vladan.png";
+import styles from "./about.module.scss";
 const images = [
   {
     url: daniel,
-    name: 'Daniel',
+    name: "Daniel",
     position: (
       <Typography
         variant="body5"
@@ -19,21 +19,21 @@ const images = [
   },
   {
     url: nathalie,
-    name: 'Nathalie',
+    name: "Nathalie",
     position: (
       <Typography
         variant="body5"
         className={styles.about_workers_item_position}
       >
-        Deputy CEO/
-        <br />
-        Head of Accounts
+        Business
+        <br /> Development
+        <br /> Director
       </Typography>
     ),
   },
   {
     url: vladan,
-    name: 'Vladan',
+    name: "Vladan",
     position: (
       <Typography
         variant="body5"
@@ -45,7 +45,7 @@ const images = [
   },
   {
     url: lana,
-    name: 'Lana',
+    name: "Lana",
     position: (
       <Typography
         variant="body5"

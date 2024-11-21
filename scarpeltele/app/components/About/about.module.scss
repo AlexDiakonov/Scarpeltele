@@ -1,9 +1,10 @@
 .about {
-  background-image: url('../../assets/about/map.png');
   background-repeat: no-repeat;
-  background-size: 66.3rem 43rem;
+  background-size: 50%;
   background-position: 100% 10rem;
   position: relative;
+  display: flex;
+  justify-content: space-between;
 
   .anchor {
     position: absolute;
@@ -12,7 +13,17 @@
   }
 
   &_imgWrapper {
-    display: none;
+    max-width: 49%;
+    transition: 250ms linear all;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 8%;
+    max-height: 42rem;
+    &_img {
+      height: 100%;
+      object-fit: contain;
+    }
   }
 
   &_content {
@@ -28,9 +39,9 @@
   }
 
   &_workers {
-    display: flex;
+    display: grid;
     justify-content: space-around;
-    max-width: 47.8rem;
+    grid-template-columns: repeat(4, 1fr);
 
     &_item {
       display: flex;
@@ -60,15 +71,16 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .about {
     background-image: unset;
-    padding-bottom: 0rem;
+    padding-bottom: 10rem;
 
     &_imgWrapper {
       display: block;
       max-height: 43rem;
 
+      padding-top: 5rem;
       &_img {
         object-fit: contain;
         transform: translate(0, -25%);
@@ -95,20 +107,28 @@
   }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 555px) {
   .about {
     &_imgWrapper {
-      max-height: 21.7rem;
-      &_img {
-        transform: translate(0, -35%);
-      }
+      display: none;
     }
-    &_content {
-    }
+  }
 
-    &_workers {
-      &_item {
-        &_imageWrapper {
+  @media screen and (max-width: 415px) {
+    .about {
+      &_imgWrapper {
+        max-height: 21.7rem;
+        &_img {
+          transform: translate(0, -35%);
+        }
+      }
+      &_content {
+      }
+
+      &_workers {
+        &_item {
+          &_imageWrapper {
+          }
         }
       }
     }

@@ -11,14 +11,14 @@ import Button from '@/app/Atoms/Button/Button';
 
 const WhyUs = () => {
   return (
-    <div id="whyUs" className={styles.whyUs}>
-      <div className={styles.anchor} data-section id="why"></div>
+    <div id='whyUs' className={styles.whyUs}>
+      <div className={styles.anchor} data-section id='why'></div>
 
       <Container className={styles.whyUs_wrapper}>
         <Typography
           className={styles.whyUs_wrapper_title}
-          component="h2"
-          variant="h2Title"
+          component='h2'
+          variant='h2Title'
         >
           Why us?
         </Typography>
@@ -28,12 +28,12 @@ const WhyUs = () => {
             <div>
               <Typography
                 className={styles.whyUs_wrapper_list_item_title}
-                component="h6"
-                variant="h6Title"
+                component='h6'
+                variant='h6Title'
               >
                 Top-notch Security
               </Typography>
-              <Typography variant="body4">
+              <Typography variant='body4'>
                 Trust in our custom platform for full data encryption and
                 continuous protection.
               </Typography>
@@ -44,12 +44,12 @@ const WhyUs = () => {
             <div>
               <Typography
                 className={styles.whyUs_wrapper_list_item_title}
-                component="h6"
-                variant="h6Title"
+                component='h6'
+                variant='h6Title'
               >
                 Save Money, Boost Sales
               </Typography>
-              <Typography variant="body4">
+              <Typography variant='body4'>
                 Experience transparent, pay-as-you-go pricing and scalable
                 growth opportunities.
               </Typography>
@@ -61,12 +61,12 @@ const WhyUs = () => {
             <div>
               <Typography
                 className={styles.whyUs_wrapper_list_item_title}
-                component="h6"
-                variant="h6Title"
+                component='h6'
+                variant='h6Title'
               >
                 24/7 dedicated Support
               </Typography>
-              <Typography variant="body4">
+              <Typography variant='body4'>
                 Enjoy 24/7 dedicated support with prompt feedback and access to
                 essential account data.
               </Typography>
@@ -77,12 +77,12 @@ const WhyUs = () => {
             <div>
               <Typography
                 className={styles.whyUs_wrapper_list_item_title}
-                component="h6"
-                variant="h6Title"
+                component='h6'
+                variant='h6Title'
               >
                 Global Audience Reach
               </Typography>
-              <Typography variant="body4">
+              <Typography variant='body4'>
                 Effortlessly connect with audiences worldwide through our
                 dependable carrier network.
               </Typography>
@@ -93,25 +93,35 @@ const WhyUs = () => {
             <div>
               <Typography
                 className={styles.whyUs_wrapper_list_item_title}
-                component="h6"
-                variant="h6Title"
+                component='h6'
+                variant='h6Title'
               >
                 Effortless CRM Integration
               </Typography>
-              <Typography variant="body4">
+              <Typography variant='body4'>
                 Streamline communication with an easy-to-use Messaging Platform
                 and CRM integration.
               </Typography>
             </div>
           </li>
         </ul>
-        <Button
-          target="_blank"
-          href="https://assets.scarpeltele.com/Scarpel_EN_clients.pdf"
-          link={true}
-        >
-          Check out our PDF presentation
-        </Button>
+        <div className={styles.btnFlexer}>
+          <Button
+            className={styles.whyUs_wrapper_btn1}
+            target='_blank'
+            href='https://assets.scarpeltele.com/Scarpel_EN_clients.pdf'
+            link={true}
+          >
+            Check out our PDF presentation
+          </Button>
+          <Button
+            target='_blank'
+            href='https://assets.scarpeltele.com/Scarpel_commercial_one_pager.pdf'
+            link={true}
+          >
+            One-pager to get a quick idea
+          </Button>
+        </div>
       </Container>
     </div>
   );

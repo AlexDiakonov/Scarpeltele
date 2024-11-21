@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import styles from './button.module.scss';
-import Link from 'next/link';
+import classNames from "classnames";
+import styles from "./button.module.scss";
+import Link from "next/link";
 
 const Button = ({
   children,
@@ -8,18 +8,19 @@ const Button = ({
   onClick,
   className,
   link = false,
-  type = 'button',
-  target = '',
-  href = '#',
+  type = "button",
+  target = "",
+  href = "#",
 }) => {
   const buttonClasses = classNames(
     styles.customButton,
     {
-      [styles.lightGreen]: variant === 'lightGreen',
-      [styles.borderTransparent]: variant === 'borderAndTransparent',
-      [styles.borderLighterGreen]: variant === 'borderLighterGreen',
+      [styles.lightGreen]: variant === "lightGreen",
+      [styles.borderTransparent]: variant === "borderAndTransparent",
+      [styles.borderLighterGreen]: variant === "borderLighterGreen",
+      [styles.noBorder]: variant === "noBorder",
     },
-    className,
+    className
   );
 
   return link ? (

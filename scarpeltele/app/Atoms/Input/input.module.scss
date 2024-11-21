@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 .inputContainer {
   display: flex;
   flex-direction: column;
@@ -24,6 +24,7 @@
       border: 1px solid $secondary-green-dark;
       border-radius: 0.8rem;
       width: 100%;
+      height: 100%;
       color: $basic-blue50;
       transition: 100ms linear all;
       resize: none;

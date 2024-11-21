@@ -1,15 +1,15 @@
-'use client';
-import Container from '../../Atoms/Container/Container';
-import Typography from '../../Atoms/Typography/Typography';
-import Button from '../../Atoms/Button/Button';
-import styles from './faq.module.scss';
-import FAQItem from '../../Atoms/FAQItem/FAQItem';
-import { useEffect, useRef, useState } from 'react';
-import { client } from '@/app/lib/client';
-import { usePathname } from 'next/navigation';
+"use client";
+import Container from "../../Atoms/Container/Container";
+import Typography from "../../Atoms/Typography/Typography";
+import Button from "../../Atoms/Button/Button";
+import styles from "./faq.module.scss";
+import FAQItem from "../../Atoms/FAQItem/FAQItem";
+import { useEffect, useRef, useState } from "react";
+import { client } from "@/app/lib/client";
+import { usePathname } from "next/navigation";
 
-import classNames from 'classnames';
-import useAnimOnScroll from '@/app/utils/useAnimOnScroll';
+import classNames from "classnames";
+import useAnimOnScroll from "@/app/utils/useAnimOnScroll";
 
 const FAQ = () => {
   const [faq, setFaq] = useState([]);
@@ -34,21 +34,21 @@ const FAQ = () => {
   return (
     <div
       ref={ref}
-      className={classNames(styles.faq, { [styles.faqW]: pathName === '/faq' })}
+      className={classNames(styles.faq, { [styles.faqW]: pathName === "/faq" })}
     >
       <div
         style={{
-          transform: `translate(${0}%, ${top * 2.4}%) rotate(${top / 3}deg)`,
+          transform: `translate(${0}%, ${top * 2.4}%) rotate(${0}deg)`,
         }}
         className={classNames(styles.parallax, {
-          [styles.hide]: pathName !== '/faq',
+          [styles.hide]: pathName !== "/faq",
         })}
       ></div>
 
       <div className={styles.anchor} data-section id="fa"></div>
       <Container className={styles.faq_wrapper}>
         <div className={styles.faq_wrapper_titleWrap}>
-          {pathName === '/faq' ? (
+          {pathName === "/faq" ? (
             <Typography
               className={styles.faq_wrapper_titleWrap_title}
               component="h1"
@@ -61,14 +61,14 @@ const FAQ = () => {
               FAQ
             </Typography>
           )}
-          {pathName !== '/faq' && (
-            <Button variant="borderAndTransparent" href={'/faq'} link={true}>
+          {pathName !== "/faq" && (
+            <Button variant="borderAndTransparent" href={"/faq"} link={true}>
               See all FAQ
             </Button>
           )}
         </div>
         <div className={styles.faq_wrapper_faqBlock}>
-          {pathName === '/faq'
+          {pathName === "/faq"
             ? faq.map((item, idx) => {
                 return (
                   <FAQItem

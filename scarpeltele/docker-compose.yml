@@ -1,0 +1,9 @@
+version: '3'
+services:
+  site:
+    image: scarpeltele/site:20
+    build: .
+    restart: always
+    ports:
+      - '3131:3000'
+    pull_policy: build

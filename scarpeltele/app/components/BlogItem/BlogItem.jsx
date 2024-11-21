@@ -1,13 +1,13 @@
-'use client';
-import React from 'react';
-import { format } from 'date-fns';
-import Img from 'next/image';
-import ArrowTopRight from '../../assets/icons/ArrowTopRight';
-import Typography from '../../Atoms/Typography/Typography';
-import { urlFor } from '../../lib/client';
-import styles from './blogItem.module.scss';
-import classNames from 'classnames';
-import Link from 'next/link';
+"use client";
+import React from "react";
+import { format } from "date-fns";
+
+import ArrowTopRight from "../../assets/icons/ArrowTopRight";
+import Typography from "../../Atoms/Typography/Typography";
+import { urlFor } from "../../lib/client";
+import styles from "./blogItem.module.scss";
+import classNames from "classnames";
+import Link from "next/link";
 /* eslint-disable @next/next/no-img-element */
 
 const BlogItem = ({ item, className, imageWrapper }) => {
@@ -29,7 +29,7 @@ const BlogItem = ({ item, className, imageWrapper }) => {
             className={styles.post_content_dateWrapper_date}
             variant="body4"
           >
-            {format(new Date(item?.publishedAt), 'dd MMM yyyy')}
+            {format(new Date(item?.publishedAt), "dd MMM yyyy")}
           </Typography>
           <Typography variant="body4">{item.authorFullName}</Typography>
         </div>

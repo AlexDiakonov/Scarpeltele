@@ -1,4 +1,4 @@
-@import '../../styles/_variables.scss';
+@import "../../styles/_variables.scss";
 
 .customButton {
   transition: 150ms ease-in-out all;
@@ -36,6 +36,23 @@
 }
 .borderLighterGreen {
   background-color: $secondary-green-lighter;
+}
+
+.noBorder {
+  color: $primary-blue;
+  border: none;
+  background-color: transparent;
+  & > svg > path {
+    transition: 150ms ease-in-out all;
+  }
+  &:hover {
+    background-color: transparent;
+    color: $secondary-blue;
+    & > svg > path,
+    rect {
+      stroke: $secondary-blue;
+    }
+  }
 }
 @media screen and (max-width: 768px) {
   .customButton {
